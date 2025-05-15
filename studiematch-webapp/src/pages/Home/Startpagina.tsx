@@ -1,9 +1,10 @@
 import "../../Style/Home/Startpagina.css";
+import Navigatie from "../../components/Navigatie";
 
 const Startpagina = () => {
 	return (
 		<div className="startpagina">
-			<h1>Hello World!</h1>
+			<Navigatie />
 		</div>
 	);
 };
