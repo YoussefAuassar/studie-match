@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Startpagina from "./pages/Home/Startpagina";
 import PersoonlijkheidstypesOverzicht from "./pages/Info/PersoonlijkheidstypesOverzicht";
+import Artistiek from "./pages/Persoonlijkheidtypes/Artistiek";
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 					path="/persoonlijkheidstypes"
 					element={<PersoonlijkheidstypesOverzicht />}
 				/>
+				<Route path="/artistiek" element={<Artistiek />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -1,0 +1,171 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow-y: auto !important;
+	background-color: #fff9f3;
+}
+
+.page-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.persoonlijkheidstypes-artistiek {
+	background-color: #a883ca;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	min-height: 100vh;
+	box-sizing: border-box;
+	padding-top: 5rem;
+}
+
+.content-container {
+	margin: 0 auto;
+	max-width: 1250px;
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+	padding-bottom: 4rem;
+	position: relative;
+	flex: 1;
+}
+
+.text-content {
+	flex: 1;
+}
+
+.text-content h1 {
+	margin-bottom: 1rem;
+	color: #ffffff;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 80px;
+}
+
+.text-content .subtitle {
+	font-size: 1rem;
+	margin-bottom: 2rem;
+	color: #ffffff;
+}
+
+.text-content p {
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+	color: #ffffff;
+	font-family: "poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1rem;
+}
+
+.text-content .bold {
+	font-weight: bold;
+}
+
+.image-content {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-content img {
+	max-height: 550px;
+	width: auto;
+	object-fit: contain;
+}
+
+.scroll-indicator {
+	position: absolute;
+	bottom: 2rem;
+	left: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #ffffff;
+	font-size: 1rem;
+	z-index: 100;
+	font-family: "poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.arrow-icon {
+	width: 24px;
+	height: 24px;
+	animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(-5px);
+	}
+}
+
+.carousel-section {
+	margin-top: 4rem;
+	padding: 2rem 0;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.carousel-section h2 {
+	text-align: center;
+	color: #ffffff;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: 400;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+	.persoonlijkheidstypes-artistiek {
+		height: auto;
+		padding: 1rem;
+	}
+
+	.content-container {
+		flex-direction: column;
+		gap: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	.text-content,
+	.image-content {
+		width: 100%;
+	}
+
+	.text-content h1 {
+		font-size: 2rem;
+	}
+
+	.text-content .subtitle {
+		font-size: 1.25rem;
+	}
+
+	.image-content img {
+		height: 40vh;
+		max-height: 400px;
+	}
+
+	.carousel-section h2 {
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+	}
+}
