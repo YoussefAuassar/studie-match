@@ -1,0 +1,164 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+	box-sizing: border-box;
+}
+
+.persoonlijkheidstypes-overzicht {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+.squares-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.square {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.square::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 1;
+}
+
+/* Artistiek Type */
+.square:nth-child(1)::before {
+	background: linear-gradient(to top, rgba(168, 131, 202, 0.9), transparent);
+}
+
+/* Realistisch Type */
+.square:nth-child(2)::before {
+	background: linear-gradient(to top, rgba(72, 166, 187, 0.9), transparent);
+}
+
+/* Ondernemend Type */
+.square:nth-child(3)::before {
+	background: linear-gradient(to top, rgba(255, 99, 102, 0.9), transparent);
+}
+
+/* Sociaal Type */
+.square:nth-child(4)::before {
+	background: linear-gradient(to top, rgba(135, 202, 131, 0.9), transparent);
+}
+
+/* Conventioneel Type */
+.square:nth-child(5)::before {
+	background: linear-gradient(to top, rgba(92, 78, 155, 0.9), transparent);
+}
+
+/* Intellectueel Type */
+.square:nth-child(6)::before {
+	background: linear-gradient(to top, rgba(0, 146, 152, 0.9), transparent);
+}
+
+.square:hover::before {
+	opacity: 1;
+}
+
+.square-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	color: white;
+	font-size: 2.3rem;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	text-align: center;
+	width: 100%;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.square:hover .square-text {
+	opacity: 1;
+}
+
+.square img {
+	object-fit: contain;
+	margin: auto;
+	display: block;
+}
+
+.square:first-child img {
+	height: 120%;
+}
+
+.square:nth-child(3) img {
+	height: 150%;
+}
+
+.square:nth-child(4) img {
+	height: 120%;
+}
+
+@media (max-width: 768px) {
+	.squares-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.squares-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+
+	.square-text {
+		font-size: 1.8rem;
+	}
+
+	.square img {
+		height: 100% !important;
+		width: 80%;
+		margin: auto;
+	}
+
+	.square:first-child img {
+		height: 100% !important;
+	}
+
+	.square:nth-child(3) img {
+		height: 100% !important;
+	}
+
+	.square:nth-child(4) img {
+		height: 100% !important;
+	}
+}
