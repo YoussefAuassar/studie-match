@@ -2,10 +2,11 @@ import "../../style/Persoonlijkheidstypes/Artistiek.css";
 import artistiek from "../../assets/artistiek-type.png";
 import arrowDown from "../../assets/arrow-down.svg";
 import { motion } from "framer-motion";
-
+import Navigatie from "../../components/Navigatie";
 const Artistiek = () => {
 	return (
 		<div className="page-container">
+			<Navigatie />
 			<div className="persoonlijkheidstypes-artistiek">
 				<div className="content-container">
 					<div className="text-content">

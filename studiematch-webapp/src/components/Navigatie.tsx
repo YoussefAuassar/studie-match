@@ -1,17 +1,28 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo-studiematch-normal.svg";
 import "./../Style/Home/Navigatie.css";
 
 const Navigatie: React.FC = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const navigate = useNavigate();
 
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
 	};
 
+	const handleNavigation = (path: string) => {
+		navigate(path);
+		setMenuOpen(false);
+	};
+
 	return (
 		<nav className="navigation">
-			<div className="logo-container">
+			<div
+				className="logo-container"
+				onClick={() => navigate("/")}
+				style={{ cursor: "pointer" }}
+			>
 				<img src={logo} alt="StudieMatch Logo" className="logo" />
 			</div>
 			<div
@@ -32,7 +43,10 @@ const Navigatie: React.FC = () => {
 						<h3>Opleidingen</h3>
 						<p>Bekijk een overzicht van alle opleidingen</p>
 					</li>
-					<li className="menu-item">
+					<li
+						className="menu-item"
+						onClick={() => handleNavigation("/persoonlijkheidstypes")}
+					>
 						<h3>Persoonlijkheidstypes</h3>
 						<p>Maak kennis met de 6 persoonlijkheidstypes</p>
 					</li>

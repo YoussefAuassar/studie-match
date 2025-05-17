@@ -1,12 +1,22 @@
 import "../../style/Home/Persoonlijkheidstypesoverzicht.css";
+import { useNavigate } from "react-router-dom";
 import artistiek from "../../assets/artistiek-type.png";
 import sociaal from "../../assets/sociaal-type.png";
 import ondernemend from "../../assets/ondernemend-type.png";
+import Navigatie from "../../components/Navigatie";
+
 const PersoonlijkheidstypesOverzicht = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="persoonlijkheidstypes-overzicht">
+			<Navigatie />
 			<div className="squares-grid">
-				<div className="square" style={{ backgroundColor: "#A883CA" }}>
+				<div
+					className="square"
+					style={{ backgroundColor: "#A883CA", cursor: "pointer" }}
+					onClick={() => navigate("/artistiek")}
+				>
 					<img src={artistiek} alt="artistiek type" />
 					<h1 className="square-text">Artistiek</h1>
 				</div>

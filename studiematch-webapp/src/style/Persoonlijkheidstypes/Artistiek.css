@@ -22,7 +22,6 @@ body {
 	position: relative;
 	min-height: 100vh;
 	box-sizing: border-box;
-	padding-top: 5rem;
 }
 
 .content-container {
