@@ -3,7 +3,7 @@ import Startpagina from "./pages/Home/Startpagina";
 import PersoonlijkheidstypesOverzicht from "./pages/Info/PersoonlijkheidstypesOverzicht";
 import Artistiek from "./pages/Persoonlijkheidtypes/Artistiek";
 import Persoonlijkheidstest from "./pages/Persoonlijkheidtest/Persoonlijkheidstest";
-
+import TestResultaten from "./pages/Persoonlijkheidtest/TestResultaten";
 function App() {
 	return (
 		<BrowserRouter>
@@ -18,6 +18,7 @@ function App() {
 					path="/persoonlijkheidstest"
 					element={<Persoonlijkheidstest />}
 				/>
+				<Route path="/testresultaten" element={<TestResultaten />} />
 			</Routes>
 		</BrowserRouter>
 	);

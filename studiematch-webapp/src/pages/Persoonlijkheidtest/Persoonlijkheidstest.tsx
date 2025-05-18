@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../style/Persoonlijkheidtest/persoonlijkheidstest.css";
 import { persoonlijkheidstestVragen } from "../../constants/persoonlijkheidstestVragen";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,28 +12,97 @@ interface Answer {
 	answer: boolean;
 }
 
+interface TestResults {
+	[key: string]: {
+		positiveAnswers: number;
+		percentage: number;
+	};
+}
+
 const Persoonlijkheidstest: React.FC = () => {
+	const navigate = useNavigate();
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [answers, setAnswers] = useState<Answer[]>([]);
 	const [direction, setDirection] = useState(1);
 
+	const calculateResults = (finalAnswers: Answer[]) => {
+		const results: TestResults = {
+			Artistiek: { positiveAnswers: 0, percentage: 0 },
+			Sociaal: { positiveAnswers: 0, percentage: 0 },
+			Ondernemend: { positiveAnswers: 0, percentage: 0 },
+			Realistisch: { positiveAnswers: 0, percentage: 0 },
+			Conventioneel: { positiveAnswers: 0, percentage: 0 },
+			Onderzoeker: { positiveAnswers: 0, percentage: 0 }
+		};
+
+		finalAnswers.forEach((answer) => {
+			if (answer.answer) {
+				results[answer.type].positiveAnswers++;
+			}
+		});
+
+		const totalPositiveAnswers = Object.values(results).reduce(
+			(sum, type) => sum + type.positiveAnswers,
+			0
+		);
+
+		Object.keys(results).forEach((type) => {
+			if (totalPositiveAnswers > 0) {
+				results[type].percentage = Math.round(
+					(results[type].positiveAnswers / totalPositiveAnswers) * 100
+				);
+			} else {
+				results[type].percentage = Math.round(
+					100 / Object.keys(results).length
+				);
+			}
+		});
+
+		const totalPercentage = Object.values(results).reduce(
+			(sum, type) => sum + type.percentage,
+			0
+		);
+
+		if (totalPercentage !== 100) {
+			const diff = 100 - totalPercentage;
+			const highestType = Object.entries(results).sort(
+				([, a], [, b]) => b.percentage - a.percentage
+			)[0][0];
+			results[highestType].percentage += diff;
+		}
+
+		const sortedTypes = Object.entries(results)
+			.sort(([, a], [, b]) => b.percentage - a.percentage)
+			.slice(0, 3)
+			.map(([type, data]) => ({
+				name: type,
+				percentage: data.percentage,
+				className: type.toLowerCase()
+			}));
+
+		return sortedTypes;
+	};
+
 	const handleAnswer = (answer: boolean) => {
 		const currentQuestion = persoonlijkheidstestVragen[currentQuestionIndex];
 
-		setAnswers([
+		const newAnswers = [
 			...answers,
 			{
 				questionId: currentQuestion.id,
 				type: currentQuestion.type,
 				answer: answer
 			}
-		]);
+		];
 
+		setAnswers(newAnswers);
 		setDirection(1);
+
 		if (currentQuestionIndex < persoonlijkheidstestVragen.length - 1) {
 			setCurrentQuestionIndex(currentQuestionIndex + 1);
 		} else {
-			console.log("Test completed!", answers);
+			const results = calculateResults(newAnswers);
+			navigate("/testresultaten", { state: { results } });
 		}
 	};
 

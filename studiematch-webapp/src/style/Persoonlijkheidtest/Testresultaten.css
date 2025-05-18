@@ -1,0 +1,198 @@
+.test-resultaten {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	padding: 20px;
+	transition: background 0.5s ease;
+	background: linear-gradient(to top, #48a6bb, #ddf7f5);
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.title {
+	font-family: "Cal Sans", sans-serif;
+	font-weight: normal;
+	color: white;
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 2.6rem;
+}
+
+.results-container {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	margin-top: 2rem;
+	width: 100%;
+	max-width: 1200px;
+	height: calc(100vh - 200px);
+	flex-wrap: wrap;
+}
+
+.type-card {
+	width: 300px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.5rem;
+	position: relative;
+	overflow: visible;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.type-image {
+	width: 600px;
+	height: 380px;
+	object-fit: contain;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	transition: transform 0.3s ease;
+}
+
+.type-card:hover .type-image {
+	transform: translate(-50%, -50%) scale(1.1);
+}
+
+.type-name {
+	font-family: "Cal Sans", sans-serif;
+	font-weight: normal;
+	color: white;
+	font-size: 2rem;
+	position: absolute;
+	bottom: 365px;
+	left: 15px;
+}
+
+.type-percentage {
+	font-family: "Cal Sans", sans-serif;
+	font-weight: normal;
+	font-size: 5rem;
+	color: white;
+	position: absolute;
+	bottom: -40px;
+	right: 20px;
+	text-align: right;
+	z-index: 2;
+}
+
+.artistiek {
+	background-color: #a883ca;
+}
+.sociaal {
+	background-color: #87ca83;
+}
+.ondernemend {
+	background-color: #ff6366;
+}
+.realistisch {
+	background-color: #7fb4da;
+}
+.conventioneel {
+	background-color: #009298;
+}
+.onderzoeker {
+	background-color: #5c4e9b;
+}
+
+@media screen and (max-width: 1200px) {
+	.results-container {
+		gap: 1.5rem;
+		padding: 0 1rem;
+	}
+
+	.type-card {
+		width: 280px;
+		height: 380px;
+	}
+
+	.type-image {
+		width: 500px;
+		height: 320px;
+	}
+
+	.type-percentage {
+		font-size: 4.5rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.title {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.results-container {
+		gap: 1rem;
+	}
+
+	.type-card {
+		width: 250px;
+		height: 340px;
+	}
+
+	.type-image {
+		width: 400px;
+		height: 280px;
+	}
+
+	.type-name {
+		font-size: 1.8rem;
+		bottom: 305px;
+	}
+
+	.type-percentage {
+		font-size: 4rem;
+		bottom: -35px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.test-resultaten {
+		position: relative;
+		height: auto;
+		min-height: 100vh;
+		overflow-y: auto;
+	}
+
+	.results-container {
+		height: auto;
+	}
+
+	.results-container {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.type-card {
+		width: 100%;
+		max-width: 300px;
+		height: 360px;
+	}
+
+	.type-image {
+		width: 380px;
+		height: 260px;
+	}
+
+	.type-name {
+		font-size: 1.6rem;
+		bottom: 325px;
+	}
+
+	.type-percentage {
+		font-size: 3.5rem;
+		bottom: -30px;
+	}
+}
