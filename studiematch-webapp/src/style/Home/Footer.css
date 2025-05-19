@@ -4,11 +4,9 @@
 	align-items: center;
 	padding: 3rem 3.3rem 1rem;
 	background-color: #48a6bb;
-	position: fixed;
-	bottom: 0;
-	left: 0;
 	width: 100%;
 	box-sizing: border-box;
+	margin-top: auto;
 }
 
 .footer-content {

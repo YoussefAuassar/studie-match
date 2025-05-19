@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/logo-studiematch-normal.svg";
 import "./../Style/Home/Footer.css";
 import arrow from "../assets/arrow-footer.svg";
+
 const Footer: React.FC = () => {
 	return (
 		<footer className="footer">
