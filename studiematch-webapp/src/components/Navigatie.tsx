@@ -35,7 +35,10 @@ const Navigatie: React.FC = () => {
 			</div>
 			<div className={`side-menu ${menuOpen ? "open" : ""}`}>
 				<ul className="menu-items">
-					<li className="menu-item">
+					<li
+						className="menu-item"
+						onClick={() => handleNavigation("/persoonlijkheidstestintro")}
+					>
 						<h3>Start Test</h3>
 						<p>Ontdek welke studierichting bij jou past</p>
 					</li>

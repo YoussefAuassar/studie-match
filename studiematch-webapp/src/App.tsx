@@ -4,6 +4,7 @@ import PersoonlijkheidstypesOverzicht from "./pages/Info/PersoonlijkheidstypesOv
 import Artistiek from "./pages/Persoonlijkheidtypes/Artistiek";
 import Persoonlijkheidstest from "./pages/Persoonlijkheidtest/Persoonlijkheidstest";
 import TestResultaten from "./pages/Persoonlijkheidtest/TestResultaten";
+import PersoonlijkheidstestIntro from "./pages/Persoonlijkheidtest/PersoonlijkheidstestIntro";
 function App() {
 	return (
 		<BrowserRouter>
@@ -19,6 +20,10 @@ function App() {
 					element={<Persoonlijkheidstest />}
 				/>
 				<Route path="/testresultaten" element={<TestResultaten />} />
+				<Route
+					path="/persoonlijkheidstestintro"
+					element={<PersoonlijkheidstestIntro />}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);
