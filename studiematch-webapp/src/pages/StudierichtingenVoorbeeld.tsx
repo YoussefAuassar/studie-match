@@ -1,28 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { createClient } from "@supabase/supabase-js";
 import StudierichtingenCarousel from "../components/StudierichtingenCarousel";
-import type { StudierichtingProps } from "../components/StudierichtingenCarousel";
-
-const supabaseUrl = "https://rnbacoepwqlkysgiqwuo.supabase.co";
-const supabaseKey =
-	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuYmFjb2Vwd3Fsa3lzZ2lxd3VvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3NzkyNzMsImV4cCI6MjA2MzM1NTI3M30.kbL9H4svdF3kVxcXscETaVZnxfxMlz53bByUN_4h24I";
-const supabase = createClient(supabaseUrl, supabaseKey);
+import {
+	type Studierichting,
+	fetchStudierichtingen
+} from "../services/supabaseService";
 
 const StudierichtingenVoorbeeld: React.FC = () => {
-	const [studierichtingen, setStudierichtingen] = useState<
-		StudierichtingProps[]
-	>([]);
+	const [studierichtingen, setStudierichtingen] = useState<Studierichting[]>(
+		[]
+	);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
-		async function fetchStudierichtingen() {
+		async function loadData() {
 			try {
 				setLoading(true);
-
-				const { data, error } = await supabase
-					.from("studierichtingen")
-					.select("*");
+				const { data, error } = await fetchStudierichtingen();
 
 				if (error) {
 					throw error;
@@ -44,23 +38,8 @@ const StudierichtingenVoorbeeld: React.FC = () => {
 			}
 		}
 
-		fetchStudierichtingen();
+		loadData();
 	}, []);
-
-	const getImageUrl = (imagePath: string) => {
-		if (!imagePath) {
-			console.warn("Empty image path provided");
-			return "";
-		}
-
-		if (imagePath.startsWith("http")) {
-			return imagePath;
-		}
-
-		const fullUrl = `${supabaseUrl}/storage/v1/object/public/studierichtingen/afbeeldingen/${imagePath}`;
-		console.log("Image URL:", fullUrl);
-		return fullUrl;
-	};
 
 	if (loading) {
 		return (
@@ -88,10 +67,7 @@ const StudierichtingenVoorbeeld: React.FC = () => {
 			{studierichtingen.length === 0 ? (
 				<p style={{ marginLeft: "2rem" }}>Geen studierichtingen gevonden.</p>
 			) : (
-				<StudierichtingenCarousel
-					studierichtingen={studierichtingen}
-					getImageUrl={getImageUrl}
-				/>
+				<StudierichtingenCarousel studierichtingen={studierichtingen} />
 			)}
 		</div>
 	);

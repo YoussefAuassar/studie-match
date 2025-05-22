@@ -3,31 +3,17 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "../style/Carousel/Studierichtingencarousel.css";
 import arrowRight from "../assets/arrow-right-carousel.svg";
-
-export interface StudierichtingProps {
-	id: number;
-	naam_richting: string;
-	afbeelding: string;
-	beschrijving_richting: string;
-	graad: number;
-	jaren: number[];
-	studiedomein: string | null;
-	finaliteit: string | null;
-	persoonlijkheidstype: string[];
-	stroom: string | null;
-}
+import { type Studierichting, getImageUrl } from "../services/supabaseService";
 
 interface StudierichtingenCarouselProps {
-	studierichtingen: StudierichtingProps[];
+	studierichtingen: Studierichting[];
 	leftPadding?: string;
-	getImageUrl: (imagePath: string) => string;
 	title?: string;
 }
 
 const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	studierichtingen,
 	leftPadding = "9rem",
-	getImageUrl,
 	title
 }) => {
 	const [, setCurrentSlide] = useState<number>(0);

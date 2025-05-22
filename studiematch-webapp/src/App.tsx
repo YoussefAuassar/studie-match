@@ -5,7 +5,6 @@ import Artistiek from "./pages/Persoonlijkheidtypes/Artistiek";
 import Persoonlijkheidstest from "./pages/Persoonlijkheidtest/Persoonlijkheidstest";
 import TestResultaten from "./pages/Persoonlijkheidtest/TestResultaten";
 import PersoonlijkheidstestIntro from "./pages/Persoonlijkheidtest/PersoonlijkheidstestIntro";
-import StudierichtingenOverzicht from "./pages/Info/StudierichtingenOverzicht";
 import StudierichtingenVoorbeeld from "./pages/StudierichtingenVoorbeeld";
 
 function App() {
@@ -29,10 +28,6 @@ function App() {
 				/>
 				<Route
 					path="/studierichtingen"
-					element={<StudierichtingenOverzicht />}
-				/>
-				<Route
-					path="/studierichtingen-voorbeeld"
 					element={<StudierichtingenVoorbeeld />}
 				/>
 			</Routes>
