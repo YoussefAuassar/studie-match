@@ -3,6 +3,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "../style/Carousel/Studierichtingencarousel.css";
 import arrowRight from "../assets/arrow-right-carousel.svg";
+import heartOutline from "../assets/heart-outline.svg";
 import { type Studierichting, getImageUrl } from "../services/supabaseService";
 
 interface StudierichtingenCarouselProps {
@@ -51,12 +52,27 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 							<div className="slide-container">
 								<div
 									className="slide-image"
-									style={{
-										backgroundImage: `url(${getImageUrl(
-											studierichting.afbeelding
-										)})`
-									}}
-								/>
+									style={
+										{
+											"--image-url": `url(${getImageUrl(
+												studierichting.afbeelding
+											)})`,
+											backgroundImage: `url(${getImageUrl(
+												studierichting.afbeelding
+											)})`
+										} as React.CSSProperties
+									}
+								>
+									<div className="favorite-button">
+										<img
+											src={heartOutline}
+											alt="Favorite"
+											width="24"
+											height="24"
+											className="heart-icon"
+										/>
+									</div>
+								</div>
 
 								<div className="slide-title-overlay">
 									<h3 className="slide-title">
