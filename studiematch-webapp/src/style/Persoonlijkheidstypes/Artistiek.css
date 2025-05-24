@@ -7,14 +7,14 @@ body {
 	background-color: #fff9f3;
 }
 
-.page-container {
+.artistiek-page-container {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	position: relative;
 }
 
-.persoonlijkheidstypes-artistiek {
+.artistiek-container {
 	background-color: #a883ca;
 	padding: 2rem;
 	display: flex;
@@ -24,22 +24,21 @@ body {
 	box-sizing: border-box;
 }
 
-.content-container {
+.artistiek-content-container {
 	margin: 0 auto;
 	max-width: 1250px;
 	display: flex;
 	gap: 4rem;
 	align-items: center;
-	padding-bottom: 4rem;
 	position: relative;
 	flex: 1;
 }
 
-.text-content {
+.artistiek-text-content {
 	flex: 1;
 }
 
-.text-content h1 {
+.artistiek-text-content h1 {
 	margin-bottom: 1rem;
 	color: #ffffff;
 	font-family: "Cal Sans", sans-serif;
@@ -48,13 +47,13 @@ body {
 	font-size: 80px;
 }
 
-.text-content .subtitle {
+.artistiek-text-content .artistiek-subtitle {
 	font-size: 1rem;
 	margin-bottom: 2rem;
 	color: #ffffff;
 }
 
-.text-content p {
+.artistiek-text-content p {
 	margin-bottom: 1.5rem;
 	line-height: 1.6;
 	color: #ffffff;
@@ -64,27 +63,33 @@ body {
 	font-size: 1rem;
 }
 
-.text-content .bold {
+.artistiek-text-content .artistiek-bold {
 	font-weight: bold;
 }
 
-.image-content {
+.artistiek-image-content {
 	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	perspective: 1500px;
+	cursor: pointer;
+	padding: 2rem;
+	transform-style: preserve-3d;
 }
 
-.image-content img {
+.artistiek-image-content img {
 	max-height: 550px;
 	width: auto;
 	object-fit: contain;
+	will-change: transform;
+	transform-style: preserve-3d;
 }
 
-.scroll-indicator {
+.artistiek-scroll-indicator {
 	position: absolute;
+	right: 3.4rem;
 	bottom: 2rem;
-	left: 2rem;
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
@@ -96,7 +101,7 @@ body {
 	font-style: normal;
 }
 
-.arrow-icon {
+.artistiek-arrow-icon {
 	width: 24px;
 	height: 24px;
 	animation: bounce 2s infinite;
@@ -118,13 +123,13 @@ body {
 	}
 }
 
-.carousel-section {
+.artistiek-carousel-section {
 	margin-top: 4rem;
 	padding: 2rem 0;
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
-.carousel-section h2 {
+.artistiek-carousel-section h2 {
 	text-align: center;
 	color: #ffffff;
 	font-family: "Cal Sans", sans-serif;
@@ -134,36 +139,36 @@ body {
 }
 
 @media (max-width: 768px) {
-	.persoonlijkheidstypes-artistiek {
+	.artistiek-container {
 		height: auto;
 		padding: 1rem;
 	}
 
-	.content-container {
+	.artistiek-content-container {
 		flex-direction: column;
 		gap: 2rem;
 		padding-bottom: 2rem;
 	}
 
-	.text-content,
-	.image-content {
+	.artistiek-text-content,
+	.artistiek-image-content {
 		width: 100%;
 	}
 
-	.text-content h1 {
+	.artistiek-text-content h1 {
 		font-size: 2rem;
 	}
 
-	.text-content .subtitle {
+	.artistiek-text-content .artistiek-subtitle {
 		font-size: 1.25rem;
 	}
 
-	.image-content img {
+	.artistiek-image-content img {
 		height: 40vh;
 		max-height: 400px;
 	}
 
-	.carousel-section h2 {
+	.artistiek-carousel-section h2 {
 		font-size: 1.8rem;
 		margin-bottom: 1.5rem;
 	}

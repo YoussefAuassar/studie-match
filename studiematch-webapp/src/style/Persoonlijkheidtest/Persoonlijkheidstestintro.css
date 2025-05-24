@@ -1,4 +1,4 @@
-.persoonlijkheidstest-intro {
+.persoonlijkheidstest-intro-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -9,7 +9,7 @@
 	background: linear-gradient(to top, #48a6bb, #ddf7f5);
 }
 
-.persoonlijkheidstest-intro h1:first-child {
+.persoonlijkheidstest-intro-container h1:first-child {
 	color: white;
 	font-family: "Cal Sans", sans-serif;
 	font-weight: normal;
@@ -17,21 +17,21 @@
 	margin-top: -10px;
 }
 
-.persoonlijkheidstest-intro h1:not(:first-child) {
+.persoonlijkheidstest-intro-container h1:not(:first-child) {
 	color: white;
 	font-family: "Cal Sans", sans-serif;
 	font-weight: normal;
 	font-size: 2.5rem;
 }
 
-.button-group {
+.persoonlijkheidstest-intro-button-group {
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;
 	margin-top: 1rem;
 }
 
-.button-group button {
+.persoonlijkheidstest-intro-button-group button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -48,7 +48,7 @@
 	transform: scale(1);
 }
 
-.button-group button:hover {
+.persoonlijkheidstest-intro-button-group button:hover {
 	background: rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(8px);
 	border-color: rgba(255, 255, 255, 0.4);
@@ -57,37 +57,39 @@
 	transform: scale(1.05);
 }
 
-.button-group button:active {
+.persoonlijkheidstest-intro-button-group button:active {
 	background: rgba(255, 255, 255, 0.15);
 	transform: scale(0.98);
 	box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-.info-icon-container {
+.persoonlijkheidstest-intro-info-container {
 	position: fixed;
 	bottom: 2rem;
 	left: 2rem;
 	cursor: pointer;
 }
 
-.info-icon {
+.persoonlijkheidstest-intro-info-icon {
 	width: 2rem;
 	height: 2rem;
 	filter: brightness(0) invert(1);
 	transition: transform 0.3s ease;
 }
 
-.info-icon-container:hover .info-icon {
+.persoonlijkheidstest-intro-info-container:hover
+	.persoonlijkheidstest-intro-info-icon {
 	transform: scale(1.1);
 }
 
-.info-icon-container:hover .tooltip {
+.persoonlijkheidstest-intro-info-container:hover
+	.persoonlijkheidstest-intro-tooltip {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(-10px);
 }
 
-.tooltip {
+.persoonlijkheidstest-intro-tooltip {
 	position: absolute;
 	bottom: calc(100% + 10px);
 	left: 0;
@@ -106,7 +108,7 @@
 	font-family: "Poppins", sans-serif;
 }
 
-.tooltip::after {
+.persoonlijkheidstest-intro-tooltip::after {
 	content: "";
 	position: absolute;
 	bottom: -8px;

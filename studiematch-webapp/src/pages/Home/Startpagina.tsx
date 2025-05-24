@@ -17,19 +17,19 @@ const Startpagina = () => {
 			<div className="startpagina">
 				<div className="startpagina-content">
 					{/* Hero sectie */}
-					<section className="hero">
-						<div className="hero-left hero-col">
+					<section className="startpagina-hero">
+						<div className="startpagina-hero-left startpagina-hero-col">
 							<img
 								src={studentMetPet}
 								alt="Student lachend"
-								className="hero-img"
+								className="startpagina-hero-img"
 							/>
 						</div>
-						<div className="hero-center hero-col">
-							<div className="hero-rectangle">
-								<h1 className="hero-title">
+						<div className="startpagina-hero-center startpagina-hero-col">
+							<div className="startpagina-hero-rectangle">
+								<h1 className="startpagina-hero-title">
 									<motion.span
-										className="hero-line hero-line-ontdek"
+										className="startpagina-hero-line startpagina-hero-line-ontdek"
 										initial={{ opacity: 0, x: 100, rotate: 5 }}
 										animate={{ opacity: 1, x: 0, rotate: 5 }}
 										transition={{ duration: 0.8, delay: 0.2 }}
@@ -38,7 +38,7 @@ const Startpagina = () => {
 									</motion.span>
 
 									<motion.span
-										className="hero-line hero-line-ideale"
+										className="startpagina-hero-line startpagina-hero-line-ideale"
 										initial={{ opacity: 0, x: -100, rotate: 0 }}
 										animate={{ opacity: 1, x: 0, rotate: 0 }}
 										transition={{ duration: 0.8, delay: 1 }}
@@ -47,7 +47,7 @@ const Startpagina = () => {
 									</motion.span>
 
 									<motion.span
-										className="hero-line hero-line-studierichting"
+										className="startpagina-hero-line startpagina-hero-line-studierichting"
 										initial={{ opacity: 0, x: 100, rotate: -3 }}
 										animate={{ opacity: 1, x: 0, rotate: -3 }}
 										transition={{ duration: 0.8, delay: 1.8 }}
@@ -55,25 +55,27 @@ const Startpagina = () => {
 										studierichting!
 									</motion.span>
 								</h1>
-								<p className="hero-subtitle">
+								<p className="startpagina-hero-subtitle">
 									Voor studenten in het secundair onderwijs.
 								</p>
-								<button className="btn btn-outline">Start test</button>
+								<button className="startpagina-btn startpagina-btn-outline">
+									Start test
+								</button>
 							</div>
 						</div>
-						<div className="hero-right hero-col">
+						<div className="startpagina-hero-right startpagina-hero-col">
 							<img
 								src={studentOpTrap}
 								alt="Groep studenten"
-								className="hero-img"
+								className="startpagina-hero-img"
 							/>
 						</div>
 						{/* Scroll indicator */}
-						<div className="scroll-indicator">
+						<div className="startpagina-scroll-indicator">
 							<img
 								src={arrowDown}
 								alt="Scroll beneden"
-								className="arrow-icon"
+								className="startpagina-arrow-icon"
 							/>
 							<span>Scroll beneden</span>
 						</div>
@@ -81,7 +83,7 @@ const Startpagina = () => {
 
 					{/* Uitleg sectie */}
 					<motion.section
-						className="uitleg"
+						className="startpagina-uitleg"
 						initial={{ opacity: 0, y: 50 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
@@ -93,12 +95,14 @@ const Startpagina = () => {
 							viewport={{ once: true }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 						>
-							Vind een <span className="highlight">studierichting</span> <br />
+							Vind een{" "}
+							<span className="startpagina-highlight">studierichting</span>{" "}
+							<br />
 							die bij je past en waarin jij uitblinkt <br />
 							met onze persoonlijkheidstest
 						</motion.h2>
 						<motion.div
-							className="uitleg-fotos"
+							className="startpagina-uitleg-fotos"
 							initial={{ opacity: 0 }}
 							whileInView={{ opacity: 1 }}
 							viewport={{ once: true }}
@@ -107,7 +111,7 @@ const Startpagina = () => {
 							<motion.img
 								src={kinderenTafel}
 								alt="Studenten techniek"
-								className="uitleg-img uitleg-img-left"
+								className="startpagina-uitleg-img startpagina-uitleg-img-left"
 								initial={{ opacity: 0, y: -100, rotate: -20 }}
 								whileInView={{ opacity: 1, y: 0, rotate: -20 }}
 								viewport={{ once: true }}
@@ -116,7 +120,7 @@ const Startpagina = () => {
 							<motion.img
 								src={kinderenLopen}
 								alt="Studenten rennen"
-								className="uitleg-img uitleg-img-center"
+								className="startpagina-uitleg-img startpagina-uitleg-img-center"
 								initial={{ opacity: 0, y: -100, rotate: 0 }}
 								whileInView={{ opacity: 1, y: 0, rotate: 0 }}
 								viewport={{ once: true }}
@@ -125,7 +129,7 @@ const Startpagina = () => {
 							<motion.img
 								src={PrintingKids}
 								alt="Studenten techniek"
-								className="uitleg-img uitleg-img-right"
+								className="startpagina-uitleg-img startpagina-uitleg-img-right"
 								initial={{ opacity: 0, y: -100, rotate: 20 }}
 								whileInView={{ opacity: 1, y: 0, rotate: 20 }}
 								viewport={{ once: true }}
@@ -135,9 +139,9 @@ const Startpagina = () => {
 					</motion.section>
 
 					{/* Banner */}
-					<div className="banner-container">
+					<div className="startpagina-banner-container">
 						<motion.div
-							className="banner"
+							className="startpagina-banner"
 							animate={{
 								x: [0, -1000]
 							}}
@@ -156,14 +160,14 @@ const Startpagina = () => {
 
 					{/* Test sectie */}
 					<motion.section
-						className="test-uitleg"
+						className="startpagina-test-uitleg"
 						initial={{ opacity: 0, y: 50 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
 					>
 						<motion.div
-							className="test-uitleg-links"
+							className="startpagina-test-uitleg-links"
 							initial={{ opacity: 0, x: -50 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
@@ -174,10 +178,12 @@ const Startpagina = () => {
 								welke studierichtingen en <br />
 								beroepen bij jou passen.
 							</h3>
-							<button className="btn btn-primary">Start test</button>
+							<button className="startpagina-btn startpagina-btn-primary">
+								Start test
+							</button>
 						</motion.div>
 						<motion.div
-							className="test-uitleg-rechts"
+							className="startpagina-test-uitleg-rechts"
 							initial={{ opacity: 0, x: 50 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
@@ -195,21 +201,22 @@ const Startpagina = () => {
 
 					{/* Wetenschap sectie */}
 					<motion.section
-						className="wetenschap"
+						className="startpagina-wetenschap"
 						initial={{ opacity: 0, y: 50 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
 					>
 						<motion.div
-							className="wetenschap-links"
+							className="startpagina-wetenschap-links"
 							initial={{ opacity: 0, x: -50 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 						>
 							<h3>
-								De <span className="highlight">wetenschap</span> <br />
+								De <span className="startpagina-highlight">wetenschap</span>{" "}
+								<br />
 								achter de test?
 							</h3>
 							<p>
@@ -220,20 +227,19 @@ const Startpagina = () => {
 								carrière die echt bij hen past.
 							</p>
 						</motion.div>
-						<div className="wetenschap-rechts">
+						<div className="startpagina-wetenschap-rechts">
 							<img
 								src={johnHolland}
 								alt="Psycholoog John Holland"
-								className="wetenschap-img"
+								className="startpagina-wetenschap-img"
 							/>
-							{/* <p className="wetenschap-caption">Psycholoog John Holland</p> */}
 						</div>
 					</motion.section>
 
 					{/* Banner onderaan */}
-					<div className="banner-container banner-container-bottom">
+					<div className="startpagina-banner-container startpagina-banner-container-bottom">
 						<motion.div
-							className="banner"
+							className="startpagina-banner"
 							animate={{
 								x: [0, -1000]
 							}}

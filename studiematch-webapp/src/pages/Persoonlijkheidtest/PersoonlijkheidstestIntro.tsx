@@ -6,20 +6,24 @@ const PersoonlijkheidstestIntro: React.FC = () => {
 	return (
 		<>
 			<Navigatie />
-			<div className="persoonlijkheidstest-intro">
+			<div className="persoonlijkheidstest-intro-container">
 				<h1>Start jouw studiematch!</h1>
 				<h1>
 					Kies je graad en krijg studierichtingen die <br />
 					perfect bij jou passen
 				</h1>
-				<div className="button-group">
+				<div className="persoonlijkheidstest-intro-button-group">
 					<button>1ste Graad</button>
 					<button>2de Graad</button>
 					<button>3de Graad</button>
 				</div>
-				<div className="info-icon-container">
-					<img src={infoIcon} alt="Meer informatie" className="info-icon" />
-					<span className="tooltip">
+				<div className="persoonlijkheidstest-intro-info-container">
+					<img
+						src={infoIcon}
+						alt="Meer informatie"
+						className="persoonlijkheidstest-intro-info-icon"
+					/>
+					<span className="persoonlijkheidstest-intro-tooltip">
 						<strong>Selecteer de graad</strong> waarin jij van plan bent te
 						studeren of waarin je momenteel zit. Op basis van jouw keuze tonen
 						we

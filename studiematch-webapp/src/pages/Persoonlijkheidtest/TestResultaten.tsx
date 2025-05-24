@@ -71,25 +71,25 @@ const TestResultaten = () => {
 	}
 
 	return (
-		<div className="test-resultaten">
+		<div className="ptest-results-container">
 			<Navigatie />
-			<h1 className="title">Jouw persoonlijkheidstype</h1>
-			<div className="results-container">
+			<h1 className="ptest-results-title">Jouw persoonlijkheidstype</h1>
+			<div className="ptest-results-grid">
 				{results.map((type: PersonalityType, index: number) => (
 					<Link
 						to={getTypeLink(type.name)}
 						key={type.name}
-						className={`type-card ${type.className}`}
+						className={`ptest-results-card ptest-results-${type.className}`}
 						style={{ textDecoration: "none" }}
 					>
-						<h2 className="type-name">{type.name}</h2>
+						<h2 className="ptest-results-name">{type.name}</h2>
 						<img
 							src={getImageForType(type.name)}
 							alt={type.name}
-							className="type-image"
+							className="ptest-results-image"
 						/>
 						<motion.div
-							className="type-percentage"
+							className="ptest-results-percentage"
 							initial={{ scale: 0.8 }}
 							animate={{ scale: 1 }}
 							transition={{ delay: index * 0.2 + 0.5 }}

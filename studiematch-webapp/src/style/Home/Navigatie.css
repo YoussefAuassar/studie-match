@@ -1,4 +1,4 @@
-.navigation {
+.navigatie {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -12,18 +12,18 @@
 	box-sizing: border-box;
 }
 
-.logo-container {
+.navigatie-logo-container {
 	display: flex;
 	align-items: center;
 	z-index: 1;
 }
 
-.logo {
+.navigatie-logo {
 	object-fit: contain;
 	width: 155px;
 }
 
-.hamburger-menu {
+.navigatie-hamburger-menu {
 	width: 40px;
 	height: 40px;
 	display: flex;
@@ -39,7 +39,7 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.hamburger-line {
+.navigatie-hamburger-line {
 	width: 50px;
 	height: 4.3px;
 	background-color: #ffffff;
@@ -47,34 +47,34 @@
 	transform-origin: center;
 }
 
-.hamburger-line:first-child,
-.hamburger-line:last-child {
+.navigatie-hamburger-line:first-child,
+.navigatie-hamburger-line:last-child {
 	width: 35px;
 }
 
 /* Hamburger naar X animatie */
-.hamburger-menu.open .hamburger-line:first-child {
+.navigatie-hamburger-menu.open .navigatie-hamburger-line:first-child {
 	transform: translateY(13px) rotate(45deg);
 	width: 50px;
 }
 
-.hamburger-menu.open .hamburger-line:nth-child(2) {
+.navigatie-hamburger-menu.open .navigatie-hamburger-line:nth-child(2) {
 	opacity: 0;
 }
 
-.hamburger-menu.open .hamburger-line:last-child {
+.navigatie-hamburger-menu.open .navigatie-hamburger-line:last-child {
 	transform: translateY(-13px) rotate(-45deg);
 	width: 50px;
 }
 
 /* Side menu */
-.side-menu {
+.navigatie-side-menu {
 	position: fixed;
 	top: 0;
 	right: -50%;
 	width: 50%;
 	height: 100vh;
-	background-color: #fff9f3;
+	background-color: #fdf6f2;
 	transition: right 0.3s ease-in-out;
 	z-index: 1000;
 	display: flex;
@@ -83,11 +83,11 @@
 	overflow-y: auto;
 }
 
-.side-menu.open {
+.navigatie-side-menu.open {
 	right: 0;
 }
 
-.menu-items {
+.navigatie-menu-items {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -95,14 +95,15 @@
 	flex-direction: column;
 }
 
-.menu-item {
+.navigatie-menu-item {
 	padding: 20px;
 	padding-left: 100px;
 	cursor: pointer;
 	border-bottom: 1px solid rgba(240, 240, 240, 0.3);
 	position: relative;
 }
-.menu-item h3 {
+
+.navigatie-menu-item h3 {
 	margin: 0 0 0 0;
 	color: #000000;
 	font-family: "Cal Sans", sans-serif;
@@ -111,7 +112,7 @@
 	font-size: 40px;
 }
 
-.menu-item p {
+.navigatie-menu-item p {
 	margin: 0;
 	font-size: 14px;
 	color: #666;
@@ -119,11 +120,12 @@
 	font-weight: 400;
 	font-style: normal;
 }
-.menu-item:hover h3 {
+
+.navigatie-menu-item:hover h3 {
 	color: #48bda0;
 }
 
-.overlay {
+.navigatie-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -134,31 +136,31 @@
 
 /* Tablet Responsiveness */
 @media (max-width: 768px) {
-	.navigation {
+	.navigatie {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
 	}
 
-	.side-menu {
+	.navigatie-side-menu {
 		width: 100%;
 		right: -100%;
 	}
 
-	.side-menu.open {
+	.navigatie-side-menu.open {
 		right: 0;
 		width: 100%;
 	}
 
-	.menu-item {
+	.navigatie-menu-item {
 		padding-left: 2rem;
 	}
 
-	.hamburger-menu.open .hamburger-line:first-child {
+	.navigatie-hamburger-menu.open .navigatie-hamburger-line:first-child {
 		transform: translateY(13px) rotate(45deg);
 		width: 50px;
 	}
 
-	.hamburger-menu.open .hamburger-line:last-child {
+	.navigatie-hamburger-menu.open .navigatie-hamburger-line:last-child {
 		transform: translateY(-13px) rotate(-45deg);
 		width: 50px;
 	}
@@ -166,42 +168,45 @@
 
 /*Mobile Responsiveness */
 @media (max-width: 460px) {
-	.navigation {
+	.navigatie {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
 	}
-	.logo {
+
+	.navigatie-logo {
 		object-fit: contain;
 		width: 130px;
 	}
-	.side-menu {
+
+	.navigatie-side-menu {
 		width: 100%;
 		right: -100%;
 	}
 
-	.side-menu.open {
+	.navigatie-side-menu.open {
 		right: 0;
 		width: 100%;
 	}
 
-	.menu-item {
+	.navigatie-menu-item {
 		padding-left: 2rem;
 	}
 
-	.hamburger-menu.open .hamburger-line:first-child {
+	.navigatie-hamburger-menu.open .navigatie-hamburger-line:first-child {
 		transform: translateY(13px) rotate(45deg);
 		width: 50px;
 	}
 
-	.hamburger-menu.open .hamburger-line:last-child {
+	.navigatie-hamburger-menu.open .navigatie-hamburger-line:last-child {
 		transform: translateY(-13px) rotate(-45deg);
 		width: 50px;
 	}
-	.menu-item h3 {
+
+	.navigatie-menu-item h3 {
 		font-size: 30px;
 	}
 
-	.menu-item p {
+	.navigatie-menu-item p {
 		font-size: 14px;
 	}
 }

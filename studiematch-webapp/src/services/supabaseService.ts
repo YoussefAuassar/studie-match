@@ -19,6 +19,14 @@ export interface Studierichting {
 	stroom: string | null;
 }
 
+export interface Beroep {
+	id: number;
+	naam_beroep: string;
+	afbeelding: string;
+	beschrijving_beroep: string;
+	persoonlijkheidstype: string[];
+}
+
 export async function fetchStudierichtingen(): Promise<{
 	data: Studierichting[] | null;
 	error: PostgrestError | null;
@@ -28,10 +36,21 @@ export async function fetchStudierichtingen(): Promise<{
 	return { data, error };
 }
 
-export function getImageUrl(imagePath: string): string {
+export async function fetchBeroepen(): Promise<{
+	data: Beroep[] | null;
+	error: PostgrestError | null;
+}> {
+	const { data, error } = await supabase.from("beroepen").select("*");
+	return { data, error };
+}
+
+export function getImageUrl(
+	imagePath: string,
+	type: "studierichtingen" | "beroepen" = "studierichtingen"
+): string {
 	if (imagePath.startsWith("http")) {
 		return imagePath;
 	}
 
-	return `${supabaseUrl}/storage/v1/object/public/studierichtingen/afbeeldingen/${imagePath}`;
+	return `${supabaseUrl}/storage/v1/object/public/${type}/afbeeldingen/${imagePath}`;
 }

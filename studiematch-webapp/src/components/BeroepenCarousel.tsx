@@ -1,19 +1,19 @@
 import React, { useState, useMemo, ReactNode } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import "../style/Carousel/Studierichtingencarousel.css";
+import "../style/Carousel/Beroepencarousel.css";
 import arrowRight from "../assets/arrow-right-carousel.svg";
 import heartOutline from "../assets/heart-outline.svg";
-import { type Studierichting, getImageUrl } from "../services/supabaseService";
+import { type Beroep, getImageUrl } from "../services/supabaseService";
 
-interface StudierichtingenCarouselProps {
-	studierichtingen: Studierichting[];
+interface BeroepenCarouselProps {
+	beroepen: Beroep[];
 	leftPadding?: string;
 	title?: ReactNode;
 }
 
-const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
-	studierichtingen,
+const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
+	beroepen,
 	leftPadding = "9rem",
 	title
 }) => {
@@ -40,43 +40,45 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	}, [leftPadding]);
 
 	return (
-		<div className="studierichtingen-carousel-container" style={cssVariables}>
-			{title && <h2 className="studierichtingen-carousel-title">{title}</h2>}
-			<div className="studierichtingen-carousel-wrapper">
+		<div className="beroepen-carousel-container" style={cssVariables}>
+			{title && <h2 className="beroepen-carousel-title">{title}</h2>}
+			<div className="beroepen-carousel-wrapper">
 				<div ref={sliderRef} className="keen-slider">
-					{studierichtingen.map((studierichting) => (
+					{beroepen.map((beroep) => (
 						<div
-							key={studierichting.id}
-							className="keen-slider__slide studierichtingen-carousel-slide"
+							key={beroep.id}
+							className="keen-slider__slide beroepen-carousel-slide"
 						>
-							<div className="studierichtingen-carousel-slide-container">
+							<div className="beroepen-carousel-slide-container">
 								<div
-									className="studierichtingen-carousel-slide-image"
+									className="beroepen-carousel-slide-image"
 									style={
 										{
 											"--image-url": `url(${getImageUrl(
-												studierichting.afbeelding
+												beroep.afbeelding,
+												"beroepen"
 											)})`,
 											backgroundImage: `url(${getImageUrl(
-												studierichting.afbeelding
+												beroep.afbeelding,
+												"beroepen"
 											)})`
 										} as React.CSSProperties
 									}
 								>
-									<div className="studierichtingen-carousel-favorite-button">
+									<div className="beroepen-carousel-favorite-button">
 										<img
 											src={heartOutline}
 											alt="Favorite"
 											width="24"
 											height="24"
-											className="studierichtingen-carousel-heart-icon"
+											className="beroepen-carousel-heart-icon"
 										/>
 									</div>
 								</div>
 
-								<div className="studierichtingen-carousel-slide-title-overlay">
-									<h3 className="studierichtingen-carousel-slide-title">
-										{studierichting.naam_richting}
+								<div className="beroepen-carousel-slide-title-overlay">
+									<h3 className="beroepen-carousel-slide-title">
+										{beroep.naam_beroep}
 									</h3>
 								</div>
 							</div>
@@ -84,16 +86,13 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 					))}
 				</div>
 
-				<div
-					className="studierichtingen-carousel-next-button"
-					onClick={goToNextSlide}
-				>
+				<div className="beroepen-carousel-next-button" onClick={goToNextSlide}>
 					<img
 						src={arrowRight}
 						alt="Next"
 						width="48"
 						height="48"
-						className="studierichtingen-carousel-arrow-icon"
+						className="beroepen-carousel-arrow-icon"
 						style={{ pointerEvents: "none" }}
 					/>
 				</div>
@@ -102,4 +101,4 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	);
 };
 
-export default StudierichtingenCarousel;
+export default BeroepenCarousel;

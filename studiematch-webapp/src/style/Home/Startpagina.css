@@ -1,23 +1,8 @@
-:root {
-	--color-primary: #48a6bb;
-	--color-secondary: #47bda0;
-	--color-background: #fdf6f2;
-	--color-text: #222;
-	--color-white: #fff;
-	--font-primary: "Cal Sans", sans-serif;
-	--font-secondary: "Poppins", sans-serif;
-	--spacing-xs: 0.5rem;
-	--spacing-sm: 1rem;
-	--spacing-md: 2rem;
-	--spacing-lg: 7rem;
-	--border-radius: 24px;
-}
-
 /* Basis layout */
 .startpagina {
-	background: var(--color-background);
+	background: #fdf6f2;
 	min-height: 100vh;
-	font-family: var(--font-secondary);
+	font-family: "Poppins", sans-serif;
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
@@ -28,16 +13,16 @@
 }
 
 /* Hero sectie */
-.hero {
+.startpagina-hero {
 	display: flex;
 	width: 100%;
 	height: 100vh;
 	min-height: 500px;
-	margin-bottom: var(--spacing-md);
+	margin-bottom: 2rem;
 	position: relative;
 }
 
-.hero-col {
+.startpagina-hero-col {
 	flex: 1 1 0;
 	display: flex;
 	align-items: stretch;
@@ -47,32 +32,32 @@
 	height: 100%;
 }
 
-.hero-left,
-.hero-right {
-	background: var(--color-background);
+.startpagina-hero-left,
+.startpagina-hero-right {
+	background: #fdf6f2;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.hero-center {
+.startpagina-hero-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: none;
 }
 
-.hero-img {
+.startpagina-hero-img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.hero-rectangle {
+.startpagina-hero-rectangle {
 	width: 100%;
 	height: 100%;
 	min-height: 320px;
-	background: linear-gradient(0deg, var(--color-primary) 0%, #ddf7f5 100%);
+	background: linear-gradient(0deg, #48a6bb 0%, #ddf7f5 100%);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -80,11 +65,11 @@
 }
 
 /* Hero tekst en knoppen */
-.hero-title {
-	font-family: var(--font-primary);
+.startpagina-hero-title {
+	font-family: "Cal Sans", sans-serif;
 	font-size: 4.7rem;
-	color: var(--color-white);
-	margin-bottom: var(--spacing-xs);
+	color: #fff;
+	margin-bottom: 0.5rem;
 	line-height: 1;
 	text-align: center;
 	display: flex;
@@ -92,113 +77,115 @@
 	align-items: center;
 }
 
-.hero-line {
+.startpagina-hero-line {
 	display: inline-block;
-	background: var(--color-secondary);
-	color: var(--color-white);
+	background: #47bda0;
+	color: #fff;
 	padding: 0em 0.3em;
 	margin: 0.25em 0;
 	font-size: 5.5rem;
 	font-weight: normal;
-	font-family: var(--font-primary);
+	font-family: "Cal Sans", sans-serif;
 	z-index: 200;
 }
 
-.hero-line-ontdek {
+.startpagina-hero-line-ontdek {
 	transform: rotate(5deg) translateY(8px);
 }
-.hero-line-ideale {
-	background: var(--color-secondary);
+.startpagina-hero-line-ideale {
+	background: #47bda0;
 }
-.hero-line-studierichting {
+.startpagina-hero-line-studierichting {
 	transform: rotate(-3deg) translateY(8px);
 }
 
-.hero-subtitle {
+.startpagina-hero-subtitle {
 	font-size: 1.3rem;
-	color: var(--color-white);
-	margin-bottom: var(--spacing-md);
+	color: #fff;
+	margin-bottom: 2rem;
 	text-align: center;
 }
 
 /* Knoppen styling */
-.btn {
+.startpagina-btn {
 	padding: 10px 50px;
-	border-radius: var(--border-radius);
+	border-radius: 24px;
 	font-size: 1.3rem;
 	font-weight: normal;
 	cursor: pointer;
 	transition: background 0.2s, color 0.2s;
-	margin-top: var(--spacing-md);
+	margin-top: 2rem;
 	display: inline-block;
-	font-family: var(--font-primary);
+	font-family: "Cal Sans", sans-serif;
 }
 
-.btn-outline {
-	background: var(--color-white);
-	border: 2px solid var(--color-white);
-	color: var(--color-primary);
+.startpagina-btn-outline {
+	background: #fff;
+	border: 2px solid #fff;
+	color: #48a6bb;
 }
 
-.btn-outline:hover {
+.startpagina-btn-outline:hover {
 	background: none;
-	color: var(--color-white);
+	color: #fff;
 }
 
-.btn-primary {
-	background: var(--color-secondary);
-	border: 2px solid var(--color-secondary);
-	color: var(--color-white);
+.startpagina-btn-primary {
+	background: #47bda0;
+	border: 2px solid #47bda0;
+	color: #fff;
 }
 
-.btn-primary:hover {
-	background: #3da890;
+.startpagina-btn-primary:hover {
+	background: transparent;
+	color: #47bda0;
 }
 
 /* Uitleg sectie */
-.uitleg {
+.startpagina-uitleg {
 	text-align: center;
-	margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+	margin: 7rem 0 1rem 0;
 }
-.uitleg h2 {
+.startpagina-uitleg h2 {
 	font-size: 3.7rem;
 	font-weight: normal;
-	font-family: var(--font-primary);
+	font-family: "Cal Sans", sans-serif;
 	margin: 0 auto;
 	line-height: 70px;
 }
-.uitleg .highlight {
-	color: var(--color-primary);
+.startpagina-uitleg .startpagina-highlight {
+	color: #48a6bb;
 }
-.uitleg-fotos {
+.startpagina-uitleg-fotos {
 	display: flex;
 	justify-content: center;
 	gap: 100px;
 }
-.uitleg-img {
+.startpagina-uitleg-img {
 	width: 300px;
 	height: 300px;
 	object-fit: cover;
-	background-color: var(--color-white);
+	background-color: #fff;
 	padding: 15px 15px 65px 15px;
 }
 
-.uitleg-img-center {
+.startpagina-uitleg-img-center {
 	transform: scale(1.4);
 	margin-top: 100px;
 }
 
-.uitleg-img-right {
+.startpagina-uitleg-img-right {
 	transform: rotate(20deg);
 	margin-top: 60px;
 }
-.uitleg-img-left {
+.startpagina-uitleg-img-left {
 	transform: rotate(-20deg);
 	margin-top: 60px;
 }
+
 /* Banner */
-.banner-container {
-	background: var(--color-primary);
+.startpagina-banner-container {
+	background: #48a6bb;
 	width: 100%;
 	overflow: hidden;
 	margin: 90px 0 0 0;
@@ -206,30 +193,26 @@
 	transform-origin: center;
 }
 
-.banner-container-bottom {
-	background: var(--color-secondary);
+.startpagina-banner-container-bottom {
+	background: #47bda0;
 	transform: rotate(0deg);
 	margin: 40px 0 0 0;
 }
 
-.banner {
-	color: var(--color-white);
+.startpagina-banner {
+	color: #fff;
 	padding: 12px 0;
 	font-weight: normal;
 	text-align: center;
 	font-size: 2.8rem;
 	letter-spacing: 0.5px;
-	font-family: var(--font-primary);
+	font-family: "Cal Sans", sans-serif;
 	white-space: nowrap;
 	display: inline-block;
 }
 
-.banner-bottom {
-	margin-top: 40px;
-}
-
 /* Test uitleg sectie */
-.test-uitleg {
+.startpagina-test-uitleg {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -238,30 +221,30 @@
 	padding: 0 80px;
 }
 
-.test-uitleg-links {
+.startpagina-test-uitleg-links {
 	flex: 0 0 auto;
 	width: 50%;
 }
 
-.test-uitleg-links h3 {
+.startpagina-test-uitleg-links h3 {
 	font-size: 3rem;
 	font-weight: normal;
-	margin-bottom: var(--spacing-sm);
+	margin-bottom: 1rem;
 	line-height: 1.3;
-	font-family: var(--font-primary);
+	font-family: "Cal Sans", sans-serif;
 }
 
-.test-uitleg-rechts {
+.startpagina-test-uitleg-rechts {
 	flex: 0 0 auto;
 	width: 45%;
 	font-size: 1.4rem;
-	color: var(--color-text);
+	color: #222;
 	margin-top: 250px;
 	line-height: 1.5;
 }
 
 /* Wetenschap sectie */
-.wetenschap {
+.startpagina-wetenschap {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -270,70 +253,61 @@
 	padding-bottom: 120px;
 }
 
-.wetenschap-links {
+.startpagina-wetenschap-links {
 	flex: 0 0 auto;
 	width: 50%;
 }
 
-.wetenschap-links h3 {
+.startpagina-wetenschap-links h3 {
 	font-size: 5rem;
 	font-weight: normal;
-	margin-bottom: var(--spacing-md);
+	margin-bottom: 2rem;
 	line-height: 1.1;
-	font-family: var(--font-primary);
+	font-family: "Cal Sans", sans-serif;
 }
 
-.wetenschap-links p {
+.startpagina-wetenschap-links p {
 	font-size: 1.4rem;
-	color: var(--color-text);
+	color: #222;
 	line-height: 1.5;
 }
 
-.wetenschap-links .highlight {
-	color: var(--color-secondary);
+.startpagina-wetenschap-links .startpagina-highlight {
+	color: #47bda0;
 }
 
-.wetenschap-rechts {
+.startpagina-wetenschap-rechts {
 	flex: 0 0 auto;
 	width: 45%;
 	text-align: center;
 	transform: rotate(5deg);
 }
 
-.wetenschap-img {
+.startpagina-wetenschap-img {
 	width: 350px;
 	height: 400px;
 	object-fit: cover;
-	background-color: var(--color-white);
+	background-color: #fff;
 	padding: 15px 15px 65px 15px;
 	transform: rotate(5deg);
 	margin-top: 80px;
 }
 
-.wetenschap-caption {
-	font-size: 1.1rem;
-	color: #888;
-	margin-top: -65px;
-	position: relative;
-	z-index: 999;
-	transform: rotate(5deg);
-}
-
 /* Scroll indicator */
-.scroll-indicator {
+.startpagina-scroll-indicator {
 	position: absolute;
-	left: var(--spacing-md);
-	bottom: var(--spacing-md);
+	left: 2rem;
+	bottom: 2rem;
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	color: var(--color-white);
+	gap: 0.5rem;
+	color: #fff;
 	font-size: 1rem;
 	z-index: 100;
-	font-family: var(--font-secondary);
+	font-family: "Poppins", sans-serif;
 }
 
-.arrow-icon {
+.startpagina-arrow-icon {
 	width: 24px;
 	height: 24px;
 	animation: bounce 2s infinite;
@@ -357,208 +331,208 @@
 
 /* Responsive design */
 @media (max-width: 1200px) {
-	.test-uitleg,
-	.wetenschap {
+	.startpagina-test-uitleg,
+	.startpagina-wetenschap {
 		padding: 0 40px;
 		gap: 40px;
 	}
 
-	.test-uitleg-links h3,
-	.wetenschap-links h3 {
+	.startpagina-test-uitleg-links h3,
+	.startpagina-wetenschap-links h3 {
 		font-size: 2.2rem;
 	}
 
-	.test-uitleg-rechts,
-	.wetenschap-links p {
+	.startpagina-test-uitleg-rechts,
+	.startpagina-wetenschap-links p {
 		font-size: 1.2rem;
 	}
 }
 
 @media (max-width: 900px) {
-	.hero {
+	.startpagina-hero {
 		display: block;
 		height: auto;
 		min-height: auto;
 		margin-bottom: 0;
 	}
 
-	.hero-col {
+	.startpagina-hero-col {
 		width: 100%;
 		height: auto;
 	}
 
-	.hero-right {
+	.startpagina-hero-right {
 		display: none;
 	}
 
-	.hero-left {
+	.startpagina-hero-left {
 		height: 300px;
 	}
 
-	.hero-rectangle {
+	.startpagina-hero-rectangle {
 		min-height: 350px;
-		padding: var(--spacing-md);
+		padding: 2rem;
 	}
 
-	.hero-title {
+	.startpagina-hero-title {
 		font-size: 3rem;
 	}
 
-	.hero-img {
+	.startpagina-hero-img {
 		object-fit: cover;
 		object-position: center 10%;
 	}
 
-	.test-uitleg,
-	.wetenschap {
+	.startpagina-test-uitleg,
+	.startpagina-wetenschap {
 		flex-direction: column;
 		padding: 0 20px;
 		gap: 30px;
 	}
 
-	.test-uitleg-links,
-	.test-uitleg-rechts,
-	.wetenschap-links,
-	.wetenschap-rechts {
+	.startpagina-test-uitleg-links,
+	.startpagina-test-uitleg-rechts,
+	.startpagina-wetenschap-links,
+	.startpagina-wetenschap-rechts {
 		width: 100%;
 	}
 
-	.test-uitleg-rechts {
+	.startpagina-test-uitleg-rechts {
 		margin-top: 0;
 	}
 
-	.wetenschap-img {
+	.startpagina-wetenschap-img {
 		width: 250px;
 		height: 250px;
 	}
 }
 
 @media (max-width: 768px) {
-	.hero-left {
+	.startpagina-hero-left {
 		height: 200px;
 	}
 
-	.hero-rectangle {
+	.startpagina-hero-rectangle {
 		min-height: 250px;
 		padding: 0.5rem 1rem 1rem 1rem;
 		margin-top: -2rem;
 	}
 
-	.hero-title {
+	.startpagina-hero-title {
 		font-size: 2rem;
 		margin-bottom: 0.5rem;
 	}
 
-	.hero-subtitle {
+	.startpagina-hero-subtitle {
 		font-size: 1.1rem;
 		margin-bottom: 1rem;
 	}
 
-	.btn {
+	.startpagina-btn {
 		margin-top: 0.5rem;
 	}
 
-	.scroll-indicator {
+	.startpagina-scroll-indicator {
 		display: none !important;
 	}
 
-	.uitleg h2 {
+	.startpagina-uitleg h2 {
 		font-size: 2.5rem;
 		line-height: 1.3;
-		padding: 0 var(--spacing-sm);
+		padding: 0 1rem;
 	}
 
-	.uitleg-fotos {
+	.startpagina-uitleg-fotos {
 		flex-direction: column;
 		align-items: center;
-		gap: var(--spacing-md);
+		gap: 2rem;
 	}
 
-	.uitleg-img {
+	.startpagina-uitleg-img {
 		width: 250px;
 		height: 250px;
 		transform: none !important;
 		margin-top: 0 !important;
 	}
 
-	.uitleg-img-left,
-	.uitleg-img-right {
+	.startpagina-uitleg-img-left,
+	.startpagina-uitleg-img-right {
 		display: none;
 	}
 
-	.uitleg-img-center {
+	.startpagina-uitleg-img-center {
 		transform: none;
 		margin-top: 0;
 	}
 
-	.test-uitleg,
-	.wetenschap {
+	.startpagina-test-uitleg,
+	.startpagina-wetenschap {
 		flex-direction: column;
 		margin: 2rem 1rem;
 		gap: 2rem;
 	}
 
-	.test-uitleg-links,
-	.test-uitleg-rechts,
-	.wetenschap-links,
-	.wetenschap-rechts {
+	.startpagina-test-uitleg-links,
+	.startpagina-test-uitleg-rechts,
+	.startpagina-wetenschap-links,
+	.startpagina-wetenschap-rechts {
 		width: 100%;
 	}
 
-	.banner {
+	.startpagina-banner {
 		font-size: 0.9rem;
-		padding: var(--spacing-sm);
+		padding: 1rem;
 	}
 }
 
 @media (max-width: 480px) {
-	.hero-left {
+	.startpagina-hero-left {
 		height: 300px;
 	}
 
-	.hero-rectangle {
+	.startpagina-hero-rectangle {
 		min-height: 150px;
 		padding: 0.7rem;
 	}
 
-	.hero-title {
+	.startpagina-hero-title {
 		font-size: 1.5rem;
 	}
 
-	.hero-line {
+	.startpagina-hero-line {
 		font-size: 3rem;
 		padding: 0.1em 0.2em;
 		margin: 0.05em 0;
 	}
 
-	.btn {
+	.startpagina-btn {
 		padding: 8px 30px;
 		font-size: 1.1rem;
 	}
 
-	.uitleg h2 {
+	.startpagina-uitleg h2 {
 		font-size: 2rem;
 	}
 
-	.uitleg-img,
-	.wetenschap-img {
+	.startpagina-uitleg-img,
+	.startpagina-wetenschap-img {
 		width: 200px;
 		height: 200px;
 	}
 
-	.test-uitleg,
-	.wetenschap {
+	.startpagina-test-uitleg,
+	.startpagina-wetenschap {
 		margin: 40px 5vw;
 		padding: 0 10px;
 	}
 
-	.test-uitleg-links h3,
-	.wetenschap-links h3 {
+	.startpagina-test-uitleg-links h3,
+	.startpagina-wetenschap-links h3 {
 		font-size: 1.8rem;
 	}
 
-	.test-uitleg-rechts,
-	.wetenschap-links p {
+	.startpagina-test-uitleg-rechts,
+	.startpagina-wetenschap-links p {
 		font-size: 1rem;
 	}
 }

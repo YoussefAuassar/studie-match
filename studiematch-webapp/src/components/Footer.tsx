@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
 	return (
 		<footer className="footer">
 			<div className="footer-content">
-				<div className="logo-container">
-					<img src={logo} alt="StudieMatch Logo" className="logo" />
+				<div className="footer-logo-container">
+					<img src={logo} alt="StudieMatch Logo" className="footer-logo" />
 				</div>
 				<div className="footer-links">
 					<a href="" className="footer-link">
@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
 					</a>
 				</div>
 			</div>
-			<div className="bottom-container">
-				<div className="copyright">© Studie Match l 2025</div>
-				<div className="arrow-container">
-					<img src={arrow} alt="Arrow" className="arrow" />
+			<div className="footer-bottom-container">
+				<div className="footer-copyright">© Studie Match l 2025</div>
+				<div className="footer-arrow-container">
+					<img src={arrow} alt="Arrow" className="footer-arrow" />
 				</div>
 			</div>
 		</footer>

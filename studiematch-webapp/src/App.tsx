@@ -6,6 +6,7 @@ import Persoonlijkheidstest from "./pages/Persoonlijkheidtest/Persoonlijkheidste
 import TestResultaten from "./pages/Persoonlijkheidtest/TestResultaten";
 import PersoonlijkheidstestIntro from "./pages/Persoonlijkheidtest/PersoonlijkheidstestIntro";
 import StudierichtingenVoorbeeld from "./pages/StudierichtingenVoorbeeld";
+import BeroepenVoorbeeld from "./pages/BeroepenVoorbeeld";
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 					path="/studierichtingen"
 					element={<StudierichtingenVoorbeeld />}
 				/>
+				<Route path="/beroepen" element={<BeroepenVoorbeeld />} />
 			</Routes>
 		</BrowserRouter>
 	);

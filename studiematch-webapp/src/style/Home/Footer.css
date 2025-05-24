@@ -17,12 +17,12 @@
 	margin-bottom: 16rem;
 }
 
-.logo-container {
+.footer-logo-container {
 	display: flex;
 	align-items: center;
 }
 
-.logo {
+.footer-logo {
 	object-fit: contain;
 	width: 155px;
 }
@@ -51,7 +51,7 @@
 	color: #dadada;
 }
 
-.bottom-container {
+.footer-bottom-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -59,7 +59,7 @@
 	position: relative;
 }
 
-.copyright {
+.footer-copyright {
 	color: #ffffff;
 	font-family: "poppins", sans-serif;
 	font-size: 18px;
@@ -70,14 +70,14 @@
 	transform: translateX(-50%);
 }
 
-.arrow-container {
+.footer-arrow-container {
 	display: flex;
 	justify-content: flex-end;
 	position: absolute;
 	right: 0;
 }
 
-.arrow {
+.footer-arrow {
 	height: 50px;
 	margin-bottom: 0.5rem;
 	animation: bounce 2s infinite;
@@ -104,7 +104,7 @@
 		margin-bottom: 8rem;
 	}
 
-	.logo {
+	.footer-logo {
 		width: 120px;
 	}
 
@@ -120,13 +120,13 @@
 		font-size: 18px;
 	}
 
-	.copyright {
+	.footer-copyright {
 		font-size: 14px;
 		width: 100%;
 		text-align: center;
 	}
 
-	.arrow {
+	.footer-arrow {
 		height: 40px;
 	}
 }

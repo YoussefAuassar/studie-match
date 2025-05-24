@@ -1,4 +1,4 @@
-.personality-test-container {
+.persoonlijkheidstest-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -15,37 +15,37 @@
 	bottom: 0;
 }
 
-.personality-test-container.color-1 {
+.persoonlijkheidstest-container.persoonlijkheidstest-color-1 {
 	background: linear-gradient(to top, #0a9297, #e2f3fd);
 }
 
-.personality-test-container.color-2 {
+.persoonlijkheidstest-container.persoonlijkheidstest-color-2 {
 	background: linear-gradient(to top, #522e74, #eeddff);
 }
 
-.personality-test-container.color-3 {
+.persoonlijkheidstest-container.persoonlijkheidstest-color-3 {
 	background: linear-gradient(to top, #57af53, #ebf8ed);
 }
 
-.personality-test-container.color-4 {
+.persoonlijkheidstest-container.persoonlijkheidstest-color-4 {
 	background: linear-gradient(to top, #f14b4e, #ffe1e1);
 }
 
-.personality-test-container.color-5 {
+.persoonlijkheidstest-container.persoonlijkheidstest-color-5 {
 	background: linear-gradient(to top, #5c4e9b, #e5d1f7);
 }
 
-.personality-test-container.color-6 {
+.persoonlijkheidstest-container.persoonlijkheidstest-color-6 {
 	background: linear-gradient(to top, #2287cf, #f3faff);
 }
 
-.buttons-container {
+.persoonlijkheidstest-buttons-container {
 	display: flex;
 	gap: 1rem;
 	justify-content: center;
 }
 
-.answer-button {
+.persoonlijkheidstest-answer-button {
 	padding: 0.8rem 6rem;
 	border: none;
 	cursor: pointer;
@@ -57,8 +57,8 @@
 	border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.yes-button,
-.no-button {
+.persoonlijkheidstest-yes-button,
+.persoonlijkheidstest-no-button {
 	color: white;
 	font-family: "Cal Sans", sans-serif;
 	font-weight: 400;
@@ -68,7 +68,7 @@
 	text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.answer-button:hover {
+.persoonlijkheidstest-answer-button:hover {
 	background: rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(8px);
 	border-color: rgba(255, 255, 255, 0.4);
@@ -76,13 +76,13 @@
 	text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-.answer-button:active {
+.persoonlijkheidstest-answer-button:active {
 	background: rgba(255, 255, 255, 0.15);
 	transform: scale(0.98);
 	box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-.back-button {
+.persoonlijkheidstest-back-button {
 	position: fixed;
 	bottom: 2rem;
 	right: 2rem;
@@ -97,24 +97,24 @@
 	justify-content: center;
 }
 
-.back-button img {
+.persoonlijkheidstest-back-button img {
 	width: 2rem;
 	height: 2rem;
 	filter: brightness(0) invert(1);
 }
 
-.back-button:hover {
+.persoonlijkheidstest-back-button:hover {
 	background: rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(8px);
 	border-color: rgba(255, 255, 255, 0.4);
 	box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-.back-button:active {
+.persoonlijkheidstest-back-button:active {
 	transform: scale(0.95);
 }
 
-.question-counter {
+.persoonlijkheidstest-question-counter {
 	position: absolute;
 	top: 9rem;
 	width: 100%;
@@ -126,7 +126,7 @@
 	font-weight: normal;
 }
 
-.question-progress {
+.persoonlijkheidstest-question-progress {
 	position: fixed;
 	bottom: 2rem;
 	left: 2rem;
@@ -138,7 +138,7 @@
 	align-items: center;
 }
 
-.progress-bar-container {
+.persoonlijkheidstest-progress-bar-container {
 	width: 200px;
 	height: 8px;
 	background: rgba(255, 255, 255, 0.2);
@@ -146,7 +146,7 @@
 	overflow: hidden;
 }
 
-.progress-bar {
+.persoonlijkheidstest-progress-bar {
 	height: 100%;
 	background: rgba(255, 255, 255, 0.8);
 	border-radius: 10px;
@@ -154,7 +154,7 @@
 	box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-.question-container {
+.persoonlijkheidstest-question-container {
 	padding: 2rem;
 	border-radius: 10px;
 	text-align: center;
@@ -163,7 +163,7 @@
 	backdrop-filter: blur(5px);
 }
 
-.question-text {
+.persoonlijkheidstest-question-text {
 	font-size: 3rem;
 	color: #ffffff;
 	font-family: "Cal Sans", sans-serif;

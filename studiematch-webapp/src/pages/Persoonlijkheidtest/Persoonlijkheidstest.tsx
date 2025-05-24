@@ -133,9 +133,13 @@ const Persoonlijkheidstest: React.FC = () => {
 	};
 
 	return (
-		<div className={`personality-test-container color-${colorIndex}`}>
+		<div
+			className={`persoonlijkheidstest-container persoonlijkheidstest-color-${colorIndex}`}
+		>
 			<Navigatie />
-			<h3 className="question-counter">Vraag {currentQuestionIndex + 1}</h3>
+			<h3 className="persoonlijkheidstest-question-counter">
+				Vraag {currentQuestionIndex + 1}
+			</h3>
 			<AnimatePresence mode="wait" initial={false}>
 				<motion.div
 					key={currentQuestionIndex}
@@ -148,12 +152,14 @@ const Persoonlijkheidstest: React.FC = () => {
 						x: { type: "spring", stiffness: 300, damping: 30 },
 						opacity: { duration: 0.2 }
 					}}
-					className="question-container"
+					className="persoonlijkheidstest-question-container"
 				>
-					<h2 className="question-text">{currentQuestion.text}</h2>
-					<div className="buttons-container">
+					<h2 className="persoonlijkheidstest-question-text">
+						{currentQuestion.text}
+					</h2>
+					<div className="persoonlijkheidstest-buttons-container">
 						<motion.button
-							className="answer-button yes-button"
+							className="persoonlijkheidstest-answer-button persoonlijkheidstest-yes-button"
 							onClick={() => handleAnswer(true)}
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
@@ -161,7 +167,7 @@ const Persoonlijkheidstest: React.FC = () => {
 							Ja
 						</motion.button>
 						<motion.button
-							className="answer-button no-button"
+							className="persoonlijkheidstest-answer-button persoonlijkheidstest-no-button"
 							onClick={() => handleAnswer(false)}
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
@@ -171,10 +177,10 @@ const Persoonlijkheidstest: React.FC = () => {
 					</div>
 				</motion.div>
 			</AnimatePresence>
-			<div className="question-progress">
-				<div className="progress-bar-container">
+			<div className="persoonlijkheidstest-question-progress">
+				<div className="persoonlijkheidstest-progress-bar-container">
 					<div
-						className="progress-bar"
+						className="persoonlijkheidstest-progress-bar"
 						style={{
 							width: `${
 								((currentQuestionIndex + 1) /
@@ -187,7 +193,7 @@ const Persoonlijkheidstest: React.FC = () => {
 			</div>
 			{currentQuestionIndex > 0 && (
 				<motion.button
-					className="back-button"
+					className="persoonlijkheidstest-back-button"
 					onClick={handleBack}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}

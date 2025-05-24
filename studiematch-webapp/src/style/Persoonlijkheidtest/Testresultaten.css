@@ -1,4 +1,4 @@
-.test-resultaten {
+.ptest-results-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -15,7 +15,7 @@
 	bottom: 0;
 }
 
-.title {
+.ptest-results-title {
 	font-family: "Cal Sans", sans-serif;
 	font-weight: normal;
 	color: white;
@@ -24,7 +24,7 @@
 	font-size: 2.6rem;
 }
 
-.results-container {
+.ptest-results-grid {
 	display: flex;
 	justify-content: center;
 	gap: 2rem;
@@ -35,7 +35,7 @@
 	flex-wrap: wrap;
 }
 
-.type-card {
+.ptest-results-card {
 	width: 300px;
 	height: 400px;
 	display: flex;
@@ -48,7 +48,7 @@
 	text-decoration: none;
 }
 
-.type-image {
+.ptest-results-image {
 	width: 600px;
 	height: 380px;
 	object-fit: contain;
@@ -60,11 +60,11 @@
 	transition: transform 0.3s ease;
 }
 
-.type-card:hover .type-image {
+.ptest-results-card:hover .ptest-results-image {
 	transform: translate(-50%, -50%) scale(1.1);
 }
 
-.type-name {
+.ptest-results-name {
 	font-family: "Cal Sans", sans-serif;
 	font-weight: normal;
 	color: white;
@@ -74,7 +74,7 @@
 	left: 15px;
 }
 
-.type-percentage {
+.ptest-results-percentage {
 	font-family: "Cal Sans", sans-serif;
 	font-weight: normal;
 	font-size: 5rem;
@@ -86,112 +86,112 @@
 	z-index: 2;
 }
 
-.artistiek {
+.ptest-results-artistiek {
 	background-color: #a883ca;
 }
-.sociaal {
+.ptest-results-sociaal {
 	background-color: #87ca83;
 }
-.ondernemend {
+.ptest-results-ondernemend {
 	background-color: #ff6366;
 }
-.realistisch {
+.ptest-results-realistisch {
 	background-color: #7fb4da;
 }
-.conventioneel {
+.ptest-results-conventioneel {
 	background-color: #009298;
 }
-.onderzoeker {
+.ptest-results-onderzoeker {
 	background-color: #5c4e9b;
 }
 
 @media screen and (max-width: 1200px) {
-	.results-container {
+	.ptest-results-grid {
 		gap: 1.5rem;
 		padding: 0 1rem;
 	}
 
-	.type-card {
+	.ptest-results-card {
 		width: 280px;
 		height: 380px;
 	}
 
-	.type-image {
+	.ptest-results-image {
 		width: 500px;
 		height: 320px;
 	}
 
-	.type-percentage {
+	.ptest-results-percentage {
 		font-size: 4.5rem;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.title {
+	.ptest-results-title {
 		font-size: 2rem;
 		margin-bottom: 1rem;
 	}
 
-	.results-container {
+	.ptest-results-grid {
 		gap: 1rem;
 	}
 
-	.type-card {
+	.ptest-results-card {
 		width: 250px;
 		height: 340px;
 	}
 
-	.type-image {
+	.ptest-results-image {
 		width: 400px;
 		height: 280px;
 	}
 
-	.type-name {
+	.ptest-results-name {
 		font-size: 1.8rem;
 		bottom: 305px;
 	}
 
-	.type-percentage {
+	.ptest-results-percentage {
 		font-size: 4rem;
 		bottom: -35px;
 	}
 }
 
 @media screen and (max-width: 480px) {
-	.test-resultaten {
+	.ptest-results-container {
 		position: relative;
 		height: auto;
 		min-height: 100vh;
 		overflow-y: auto;
 	}
 
-	.results-container {
+	.ptest-results-grid {
 		height: auto;
 	}
 
-	.results-container {
+	.ptest-results-grid {
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
 	}
 
-	.type-card {
+	.ptest-results-card {
 		width: 100%;
 		max-width: 300px;
 		height: 360px;
 	}
 
-	.type-image {
+	.ptest-results-image {
 		width: 380px;
 		height: 260px;
 	}
 
-	.type-name {
+	.ptest-results-name {
 		font-size: 1.6rem;
 		bottom: 325px;
 	}
 
-	.type-percentage {
+	.ptest-results-percentage {
 		font-size: 3.5rem;
 		bottom: -30px;
 	}
