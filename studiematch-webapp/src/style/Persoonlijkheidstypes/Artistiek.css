@@ -138,38 +138,115 @@ body {
 	margin-bottom: 2rem;
 }
 
+.artistiek-section-title {
+	font-size: 3rem;
+	margin-bottom: 2rem;
+	font-family: "Cal Sans", sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.artistiek-content-container {
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+
+	.artistiek-text-content h1 {
+		font-size: 60px;
+	}
+
+	.artistiek-image-content img {
+		max-height: 450px;
+	}
+
+	.artistiek-section-title {
+		font-size: 2.5rem;
+	}
+}
+
 @media (max-width: 768px) {
 	.artistiek-container {
-		height: auto;
 		padding: 1rem;
+		min-height: auto;
 	}
 
 	.artistiek-content-container {
 		flex-direction: column;
 		gap: 2rem;
-		padding-bottom: 2rem;
+		padding: 2rem 1rem;
+		margin-top: 3rem;
 	}
 
-	.artistiek-text-content,
-	.artistiek-image-content {
-		width: 100%;
+	.artistiek-text-content {
+		text-align: center;
 	}
 
 	.artistiek-text-content h1 {
-		font-size: 2rem;
+		font-size: 48px;
+		margin-bottom: 0.5rem;
 	}
 
 	.artistiek-text-content .artistiek-subtitle {
-		font-size: 1.25rem;
+		font-size: 0.9rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.artistiek-text-content p {
+		font-size: 0.9rem;
+		text-align: left;
+	}
+
+	.artistiek-image-content {
+		padding: 1rem;
 	}
 
 	.artistiek-image-content img {
-		height: 40vh;
-		max-height: 400px;
+		max-height: 350px;
 	}
 
-	.artistiek-carousel-section h2 {
-		font-size: 1.8rem;
+	.artistiek-scroll-indicator {
+		display: none;
+	}
+
+	.artistiek-section-title {
+		font-size: 2.2rem;
 		margin-bottom: 1.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.artistiek-container {
+		padding: 0.5rem;
+	}
+
+	.artistiek-content-container {
+		padding: 1rem 0.5rem;
+		margin-top: 2rem;
+	}
+
+	.artistiek-text-content h1 {
+		font-size: 36px;
+	}
+
+	.artistiek-text-content .artistiek-subtitle {
+		font-size: 0.8rem;
+	}
+
+	.artistiek-text-content p {
+		font-size: 0.85rem;
+		margin-bottom: 1rem;
+	}
+
+	.artistiek-image-content {
+		padding: 0.5rem;
+	}
+
+	.artistiek-image-content img {
+		max-height: 250px;
+	}
+
+	.artistiek-section-title {
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
 	}
 }

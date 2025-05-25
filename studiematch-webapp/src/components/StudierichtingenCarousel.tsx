@@ -1,4 +1,5 @@
-import React, { useState, useMemo, ReactNode } from "react";
+import React, { useState, useMemo } from "react";
+import type { ReactNode } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "../style/Carousel/Studierichtingencarousel.css";

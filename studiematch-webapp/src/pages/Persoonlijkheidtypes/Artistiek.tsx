@@ -3,8 +3,10 @@ import artistiek from "../../assets/artistiek-type.png";
 import arrowDown from "../../assets/arrow-down.svg";
 import { motion, useSpring } from "framer-motion";
 import Navigatie from "../../components/Navigatie";
+import Footer from "../../components/Footer";
 import { useState, useEffect } from "react";
 import StudierichtingenCarousel from "../../components/StudierichtingenCarousel";
+import PersoonlijkheidTypesCarousel from "../../components/PersoonlijkheidTypesCarousel";
 import {
 	type Studierichting,
 	type Beroep,
@@ -71,7 +73,7 @@ const Artistiek = () => {
 		const rotateYValue = (mousePosition.x - 0.5) * 35;
 		rotateX.set(rotateXValue);
 		rotateY.set(rotateYValue);
-	}, [mousePosition]);
+	}, [mousePosition, rotateX, rotateY]);
 
 	const handleMouseLeave = () => {
 		rotateX.set(0);
@@ -174,13 +176,7 @@ const Artistiek = () => {
 					<StudierichtingenCarousel
 						studierichtingen={studierichtingen}
 						title={
-							<div
-								style={{
-									fontSize: "3rem",
-									marginBottom: "2rem",
-									fontFamily: "Cal Sans"
-								}}
-							>
+							<div className="artistiek-section-title">
 								<span style={{ color: "#A883CA" }}>Studierichtingen</span> voor
 								Artistiek
 							</div>
@@ -189,17 +185,11 @@ const Artistiek = () => {
 				</div>
 			)}
 			{!loading && beroepen.length > 0 && (
-				<div style={{ marginTop: "4rem", marginBottom: "4rem" }}>
+				<div style={{ marginTop: "4rem" }}>
 					<BeroepenCarousel
 						beroepen={beroepen}
 						title={
-							<div
-								style={{
-									fontSize: "3rem",
-									marginBottom: "2rem",
-									fontFamily: "Cal Sans"
-								}}
-							>
+							<div className="artistiek-section-title">
 								<span style={{ color: "#A883CA" }}>Beroepen</span> voor
 								Artistiek
 							</div>
@@ -207,6 +197,15 @@ const Artistiek = () => {
 					/>
 				</div>
 			)}
+			<div style={{ marginTop: "4rem", marginBottom: "4rem" }}>
+				<PersoonlijkheidTypesCarousel
+					currentType="Artistiek"
+					title={
+						<div className="persoonlijkheid-carousel-title">Andere types</div>
+					}
+				/>
+			</div>
+			<Footer />
 		</div>
 	);
 };

@@ -1,0 +1,132 @@
+.persoonlijkheid-carousel-container {
+	position: relative;
+	overflow: visible;
+	padding-left: 9rem;
+}
+
+.persoonlijkheid-carousel-title {
+	font-size: 3rem;
+	font-weight: normal;
+	margin-bottom: 2rem;
+	font-family: "Cal Sans", sans-serif;
+}
+
+.persoonlijkheid-carousel-wrapper {
+	position: relative;
+	overflow: visible;
+}
+
+.keen-slider {
+	overflow: visible !important;
+}
+
+.persoonlijkheid-carousel-slide {
+	min-width: 380px;
+	height: 550px;
+	position: relative;
+	overflow: hidden;
+}
+
+.persoonlijkheid-carousel-slide-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.persoonlijkheid-carousel-slide-content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.persoonlijkheid-type-label {
+	position: absolute;
+	top: 1rem;
+	left: 0rem;
+	transform-origin: 0 0;
+	transform: rotate(90deg) translateY(-100%);
+	font-size: 4.5rem;
+	font-weight: 500;
+	color: white;
+	font-family: "Cal Sans", sans-serif;
+	z-index: 2;
+}
+
+.persoonlijkheid-carousel-next-button {
+	position: absolute;
+	right: 50px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+	background-color: black;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+}
+
+.persoonlijkheid-carousel-next-button:hover {
+	background-color: #333;
+}
+
+.persoonlijkheid-carousel-arrow-icon {
+	width: 24px;
+	height: 24px;
+	filter: brightness(0) invert(1);
+	transform: none !important;
+	transition: none !important;
+	animation: none !important;
+}
+
+@media (max-width: 768px) {
+	.persoonlijkheid-carousel-container {
+		padding: 0 1rem;
+	}
+
+	.persoonlijkheid-carousel-slide {
+		min-width: 300px;
+		height: 450px;
+	}
+
+	.persoonlijkheid-type-label {
+		font-size: 3.5rem;
+	}
+
+	.persoonlijkheid-carousel-next-button {
+		right: 20px;
+		width: 35px;
+		height: 35px;
+	}
+
+	.persoonlijkheid-carousel-arrow-icon {
+		width: 20px;
+		height: 20px;
+	}
+
+	.persoonlijkheid-carousel-title {
+		font-size: 2.2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.persoonlijkheid-carousel-container {
+		padding: 0 0.5rem;
+	}
+
+	.persoonlijkheid-carousel-slide {
+		min-width: 250px;
+		height: 400px;
+	}
+
+	.persoonlijkheid-type-label {
+		font-size: 2.8rem;
+	}
+
+	.persoonlijkheid-carousel-title {
+		font-size: 1.8rem;
+	}
+}
