@@ -1,8 +1,15 @@
 import "../../style/Persoonlijkheidtest/Persoonlijkheidstestintro.css";
 import Navigatie from "../../components/Navigatie";
 import infoIcon from "../../assets/info-more.svg";
+import { useNavigate } from "react-router-dom";
 
 const PersoonlijkheidstestIntro: React.FC = () => {
+	const navigate = useNavigate();
+
+	const handleStartTest = (graad: number) => {
+		navigate("/persoonlijkheidstest", { state: { graad: Number(graad) } });
+	};
+
 	return (
 		<>
 			<Navigatie />
@@ -13,9 +20,9 @@ const PersoonlijkheidstestIntro: React.FC = () => {
 					perfect bij jou passen
 				</h1>
 				<div className="persoonlijkheidstest-intro-button-group">
-					<button>1ste Graad</button>
-					<button>2de Graad</button>
-					<button>3de Graad</button>
+					<button onClick={() => handleStartTest(1)}>1ste Graad</button>
+					<button onClick={() => handleStartTest(2)}>2de Graad</button>
+					<button onClick={() => handleStartTest(3)}>3de Graad</button>
 				</div>
 				<div className="persoonlijkheidstest-intro-info-container">
 					<img

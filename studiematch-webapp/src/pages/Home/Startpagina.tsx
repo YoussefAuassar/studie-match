@@ -9,8 +9,11 @@ import kinderenLopen from "../../assets/kinderen-lopen.png";
 import kinderenTafel from "../../assets/kinderen-tafel.png";
 import PrintingKids from "../../assets/Printing-kinderen.png";
 import arrowDown from "../../assets/arrow-down.svg";
+import { useNavigate } from "react-router-dom";
 
 const Startpagina = () => {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<Navigatie />
@@ -58,7 +61,10 @@ const Startpagina = () => {
 								<p className="startpagina-hero-subtitle">
 									Voor studenten in het secundair onderwijs.
 								</p>
-								<button className="startpagina-btn startpagina-btn-outline">
+								<button
+									className="startpagina-btn startpagina-btn-outline"
+									onClick={() => navigate("/persoonlijkheidstestintro")}
+								>
 									Start test
 								</button>
 							</div>
@@ -178,7 +184,10 @@ const Startpagina = () => {
 								welke studierichtingen en <br />
 								beroepen bij jou passen.
 							</h3>
-							<button className="startpagina-btn startpagina-btn-primary">
+							<button
+								className="startpagina-btn startpagina-btn-primary"
+								onClick={() => navigate("/persoonlijkheidstestintro")}
+							>
 								Start test
 							</button>
 						</motion.div>

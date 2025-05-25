@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../../style/Persoonlijkheidtest/persoonlijkheidstest.css";
 import { persoonlijkheidstestVragen } from "../../constants/persoonlijkheidstestVragen";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,6 +21,8 @@ interface TestResults {
 
 const Persoonlijkheidstest: React.FC = () => {
 	const navigate = useNavigate();
+	const location = useLocation();
+	const selectedGraad = location.state?.graad;
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [answers, setAnswers] = useState<Answer[]>([]);
 	const [direction, setDirection] = useState(1);
@@ -101,8 +103,7 @@ const Persoonlijkheidstest: React.FC = () => {
 		if (currentQuestionIndex < persoonlijkheidstestVragen.length - 1) {
 			setCurrentQuestionIndex(currentQuestionIndex + 1);
 		} else {
-			const results = calculateResults(newAnswers);
-			navigate("/testresultaten", { state: { results } });
+			handleFinishTest();
 		}
 	};
 
@@ -112,6 +113,13 @@ const Persoonlijkheidstest: React.FC = () => {
 			setCurrentQuestionIndex(currentQuestionIndex - 1);
 			setAnswers(answers.slice(0, -1));
 		}
+	};
+
+	const handleFinishTest = () => {
+		const results = calculateResults(answers);
+		navigate("/testresultaten", {
+			state: { results, graad: Number(selectedGraad) }
+		});
 	};
 
 	const currentQuestion = persoonlijkheidstestVragen[currentQuestionIndex];
