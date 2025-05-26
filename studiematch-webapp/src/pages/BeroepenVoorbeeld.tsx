@@ -11,16 +11,8 @@ const BeroepenVoorbeeld: React.FC = () => {
 		async function loadData() {
 			try {
 				setLoading(true);
-				const { data, error } = await fetchBeroepen();
-
-				if (error) {
-					throw error;
-				}
-
-				if (data) {
-					console.log("Fetched data:", data);
-					setBeroepen(data);
-				}
+				const data = await fetchBeroepen();
+				setBeroepen(data);
 			} catch (err) {
 				console.error("Error fetching data:", err);
 				if (err instanceof Error) {

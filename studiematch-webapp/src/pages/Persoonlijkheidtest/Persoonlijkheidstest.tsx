@@ -23,6 +23,7 @@ const Persoonlijkheidstest: React.FC = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const selectedGraad = location.state?.graad;
+	const selectedJaar = location.state?.jaar;
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [answers, setAnswers] = useState<Answer[]>([]);
 	const [direction, setDirection] = useState(1);
@@ -118,7 +119,7 @@ const Persoonlijkheidstest: React.FC = () => {
 	const handleFinishTest = () => {
 		const results = calculateResults(answers);
 		navigate("/testresultaten", {
-			state: { results, graad: Number(selectedGraad) }
+			state: { results, graad: Number(selectedGraad), jaar: selectedJaar }
 		});
 	};
 

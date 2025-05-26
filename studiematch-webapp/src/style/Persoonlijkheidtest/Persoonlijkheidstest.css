@@ -85,7 +85,7 @@
 .persoonlijkheidstest-back-button {
 	position: fixed;
 	bottom: 2rem;
-	right: 2rem;
+	left: 2rem;
 	background: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(5px);
 	border: 2px solid rgba(255, 255, 255, 0.2);
@@ -129,7 +129,8 @@
 .persoonlijkheidstest-question-progress {
 	position: fixed;
 	bottom: 2rem;
-	left: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
 	font-family: "Cal Sans", sans-serif;
 	font-weight: normal;
 	font-size: 2rem;

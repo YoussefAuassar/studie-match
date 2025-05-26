@@ -29,34 +29,21 @@ const Artistiek = () => {
 	useEffect(() => {
 		async function loadData() {
 			try {
-				const [studierichtingenResponse, beroepenResponse] = await Promise.all([
-					fetchStudierichtingen(),
-					fetchBeroepen()
+				setLoading(true);
+				const [studierichtingenData, beroepenData] = await Promise.all([
+					fetchStudierichtingen(undefined, undefined, ["Artistiek"]),
+					fetchBeroepen(["Artistiek"])
 				]);
 
-				if (studierichtingenResponse.error)
-					throw studierichtingenResponse.error;
-				if (beroepenResponse.error) throw beroepenResponse.error;
-
-				if (studierichtingenResponse.data) {
-					const artisticStudies = studierichtingenResponse.data.filter(
-						(study) => study.persoonlijkheidstype.includes("Artistiek")
-					);
-					setStudierichtingen(artisticStudies);
-				}
-
-				if (beroepenResponse.data) {
-					const artisticBeroepen = beroepenResponse.data.filter((beroep) =>
-						beroep.persoonlijkheidstype.includes("Artistiek")
-					);
-					setBeroepen(artisticBeroepen);
-				}
+				setStudierichtingen(studierichtingenData);
+				setBeroepen(beroepenData);
 			} catch (err) {
 				console.error("Error fetching data:", err);
 			} finally {
 				setLoading(false);
 			}
 		}
+
 		loadData();
 	}, []);
 

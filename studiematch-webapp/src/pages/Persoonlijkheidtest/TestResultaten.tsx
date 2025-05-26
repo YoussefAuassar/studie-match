@@ -42,10 +42,11 @@ const getTypeLink = (type: string) => {
 const TestResultaten = () => {
 	const location = useLocation();
 	const results = location.state?.results;
-	const selectedGraad = Number(location.state?.graad);
-	const [animatedPercentages, setAnimatedPercentages] = useState<number[]>([
-		0, 0, 0
-	]);
+	const selectedGraad = location.state?.graad;
+	const selectedJaar = location.state?.jaar;
+	const [animatedPercentages, setAnimatedPercentages] = useState<number[]>(
+		results ? results.map(() => 0) : []
+	);
 	const [studierichtingen, setStudierichtingen] = useState<Studierichting[]>(
 		[]
 	);
@@ -53,51 +54,40 @@ const TestResultaten = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		async function loadData() {
+		const loadData = async () => {
+			if (!results) return;
+
+			setLoading(true);
 			try {
-				const [studierichtingenRes, beroepenRes] = await Promise.all([
-					fetchStudierichtingen(),
-					fetchBeroepen()
-				]);
+				// Get the top 3 personality types
+				const topTypes = results
+					.sort(
+						(a: PersonalityType, b: PersonalityType) =>
+							b.percentage - a.percentage
+					)
+					.slice(0, 3)
+					.map((type: PersonalityType) => type.name);
 
-				if (studierichtingenRes.error) throw studierichtingenRes.error;
-				if (beroepenRes.error) throw beroepenRes.error;
+				// Fetch studierichtingen based on graad, jaar, and personality types
+				const studierichtingenData = await fetchStudierichtingen(
+					selectedGraad,
+					selectedJaar,
+					topTypes
+				);
+				setStudierichtingen(studierichtingenData);
 
-				if (studierichtingenRes.data && beroepenRes.data) {
-					// Get the top 3 personality types
-					const topThreeTypes = results.map(
-						(type: PersonalityType) => type.name
-					);
-
-					// Filter studies based on any of the top 3 personality types and selected graad
-					const filteredStudies = studierichtingenRes.data.filter(
-						(study) =>
-							study.graad === selectedGraad &&
-							study.persoonlijkheidstype.some((type: string) =>
-								topThreeTypes.includes(type)
-							)
-					);
-					setStudierichtingen(filteredStudies);
-
-					// Filter beroepen based on any of the top 3 personality types
-					const filteredBeroepen = beroepenRes.data.filter((beroep) =>
-						beroep.persoonlijkheidstype.some((type: string) =>
-							topThreeTypes.includes(type)
-						)
-					);
-					setBeroepen(filteredBeroepen);
-				}
-			} catch (err) {
-				console.error("Error fetching data:", err);
+				// Fetch beroepen based on personality types
+				const beroepenData = await fetchBeroepen(topTypes);
+				setBeroepen(beroepenData);
+			} catch (error) {
+				console.error("Error loading data:", error);
 			} finally {
 				setLoading(false);
 			}
-		}
+		};
 
-		if (results) {
-			loadData();
-		}
-	}, [results, selectedGraad]);
+		loadData();
+	}, [results, selectedGraad, selectedJaar]);
 
 	useEffect(() => {
 		if (!results) return;

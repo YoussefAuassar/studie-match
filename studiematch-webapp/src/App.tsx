@@ -5,6 +5,8 @@ import Artistiek from "./pages/Persoonlijkheidtypes/Artistiek";
 import Persoonlijkheidstest from "./pages/Persoonlijkheidtest/Persoonlijkheidstest";
 import TestResultaten from "./pages/Persoonlijkheidtest/TestResultaten";
 import PersoonlijkheidstestIntro from "./pages/Persoonlijkheidtest/PersoonlijkheidstestIntro";
+import TweedeGraad from "./pages/Persoonlijkheidtest/TweedeGraad";
+import DerdeGraad from "./pages/Persoonlijkheidtest/DerdeGraad";
 import StudierichtingenVoorbeeld from "./pages/StudierichtingenVoorbeeld";
 import BeroepenVoorbeeld from "./pages/BeroepenVoorbeeld";
 
@@ -27,6 +29,8 @@ function App() {
 					path="/persoonlijkheidstestintro"
 					element={<PersoonlijkheidstestIntro />}
 				/>
+				<Route path="/tweede-graad" element={<TweedeGraad />} />
+				<Route path="/derde-graad" element={<DerdeGraad />} />
 				<Route
 					path="/studierichtingen"
 					element={<StudierichtingenVoorbeeld />}

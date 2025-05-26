@@ -16,16 +16,8 @@ const StudierichtingenVoorbeeld: React.FC = () => {
 		async function loadData() {
 			try {
 				setLoading(true);
-				const { data, error } = await fetchStudierichtingen();
-
-				if (error) {
-					throw error;
-				}
-
-				if (data) {
-					console.log("Fetched data:", data);
-					setStudierichtingen(data);
-				}
+				const data = await fetchStudierichtingen();
+				setStudierichtingen(data);
 			} catch (err) {
 				console.error("Error fetching data:", err);
 				if (err instanceof Error) {

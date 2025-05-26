@@ -27,21 +27,78 @@ export interface Beroep {
 	persoonlijkheidstype: string[];
 }
 
-export async function fetchStudierichtingen(): Promise<{
-	data: Studierichting[] | null;
-	error: PostgrestError | null;
-}> {
-	const { data, error } = await supabase.from("studierichtingen").select("*");
+export async function fetchStudierichtingen(
+	graad?: number,
+	jaar?: number,
+	persoonlijkheidstypes?: string[]
+): Promise<Studierichting[]> {
+	try {
+		let query = supabase.from("studierichtingen").select("*");
 
-	return { data, error };
+		if (graad !== undefined) {
+			query = query.eq("graad", graad);
+		}
+
+		if (jaar !== undefined) {
+			query = query.contains("jaren", [jaar]);
+		}
+
+		const { data, error } = await query;
+
+		if (error) {
+			console.error("Error fetching studierichtingen:", error);
+			return [];
+		}
+
+		if (!data) {
+			return [];
+		}
+
+		// Filter by personality types if provided
+		if (persoonlijkheidstypes && persoonlijkheidstypes.length > 0) {
+			return data.filter((richting) =>
+				richting.persoonlijkheidstype.some((type) =>
+					persoonlijkheidstypes.includes(type)
+				)
+			);
+		}
+
+		return data;
+	} catch (error) {
+		console.error("Error in fetchStudierichtingen:", error);
+		return [];
+	}
 }
 
-export async function fetchBeroepen(): Promise<{
-	data: Beroep[] | null;
-	error: PostgrestError | null;
-}> {
-	const { data, error } = await supabase.from("beroepen").select("*");
-	return { data, error };
+export async function fetchBeroepen(
+	persoonlijkheidstypes?: string[]
+): Promise<Beroep[]> {
+	try {
+		const { data, error } = await supabase.from("beroepen").select("*");
+
+		if (error) {
+			console.error("Error fetching beroepen:", error);
+			return [];
+		}
+
+		if (!data) {
+			return [];
+		}
+
+		// Filter by personality types if provided
+		if (persoonlijkheidstypes && persoonlijkheidstypes.length > 0) {
+			return data.filter((beroep) =>
+				beroep.persoonlijkheidstype.some((type) =>
+					persoonlijkheidstypes.includes(type)
+				)
+			);
+		}
+
+		return data;
+	} catch (error) {
+		console.error("Error in fetchBeroepen:", error);
+		return [];
+	}
 }
 
 export function getImageUrl(
