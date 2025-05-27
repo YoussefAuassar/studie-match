@@ -159,7 +159,7 @@ const Artistiek = () => {
 				</div>
 			</div>
 			{!loading && studierichtingen.length > 0 && (
-				<div style={{ marginTop: "4rem" }}>
+				<div style={{ marginTop: "2rem" }}>
 					<StudierichtingenCarousel
 						studierichtingen={studierichtingen}
 						title={
@@ -172,7 +172,7 @@ const Artistiek = () => {
 				</div>
 			)}
 			{!loading && beroepen.length > 0 && (
-				<div style={{ marginTop: "4rem" }}>
+				<div style={{ marginTop: "2rem" }}>
 					<BeroepenCarousel
 						beroepen={beroepen}
 						title={

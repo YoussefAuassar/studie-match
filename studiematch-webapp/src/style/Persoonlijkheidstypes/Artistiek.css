@@ -178,12 +178,14 @@ body {
 	}
 
 	.artistiek-text-content {
-		text-align: center;
+		text-align: left;
+		margin-top: 40px;
 	}
 
 	.artistiek-text-content h1 {
 		font-size: 48px;
 		margin-bottom: 0.5rem;
+		text-align: left;
 	}
 
 	.artistiek-text-content .artistiek-subtitle {
