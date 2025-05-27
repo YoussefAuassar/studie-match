@@ -1,0 +1,209 @@
+.beroep-detail-container {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.beroep-hero-section {
+	position: relative;
+	width: 100%;
+	height: 75vh;
+}
+
+.beroep-hero-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.beroep-hero-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+	color: white;
+}
+
+.beroep-hero-overlay-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	transform: translateY(-2rem);
+}
+
+.beroep-hero-title {
+	font-size: 3.5rem;
+	margin: 0;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: normal;
+}
+
+.beroep-content-section {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+.beroep-content-title {
+	color: #000000;
+	margin-bottom: 1.5rem;
+	font-size: 3rem;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: normal;
+}
+
+.beroep-description {
+	font-size: 1.3rem;
+	font-family: "Poppins", sans-serif;
+	text-align: justify;
+	text-justify: inter-word;
+	line-height: 1.5;
+	color: #444;
+	font-weight: 400;
+	background-color: #ffffff;
+	padding: 2rem;
+}
+
+.beroep-test-banner-container {
+	width: 100%;
+	background-color: #ffffff;
+	margin: 3rem 0 7rem 0;
+}
+
+.beroep-test-banner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 4rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 4rem;
+}
+
+.beroep-test-banner-left {
+	font-family: "Cal Sans", sans-serif;
+	font-size: 3rem;
+	color: #000000;
+	font-weight: normal;
+	flex: 1;
+}
+
+.beroep-test-banner-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.beroep-test-banner-description {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.5rem;
+	color: #444;
+	margin: 0;
+}
+
+.beroep-test-button {
+	background: #47bda0;
+	border: 2px solid #47bda0;
+	color: white;
+	border-radius: 24px;
+	padding: 10px 50px;
+	font-family: "Cal Sans", sans-serif;
+	font-size: 1.3rem;
+	font-weight: normal;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+	white-space: nowrap;
+	align-self: flex-start;
+}
+
+.beroep-test-button:hover {
+	background: transparent;
+	color: #47bda0;
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+	.beroep-hero-section {
+		height: 60vh;
+	}
+
+	.beroep-hero-title {
+		font-size: 2.8rem;
+	}
+
+	.beroep-content-section {
+		padding: 2rem 1.5rem;
+	}
+
+	.beroep-content-title {
+		font-size: 2.5rem;
+	}
+
+	.beroep-description {
+		font-size: 1.2rem;
+		padding: 1.5rem;
+	}
+
+	.beroep-test-banner {
+		flex-direction: column;
+		text-align: center;
+		padding: 3rem 1.5rem;
+		gap: 2rem;
+	}
+
+	.beroep-test-banner-left {
+		font-size: 2.5rem;
+	}
+
+	.beroep-test-banner-description {
+		font-size: 1.3rem;
+	}
+
+	.beroep-test-button {
+		align-self: center;
+	}
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+	.beroep-hero-section {
+		height: 50vh;
+	}
+
+	.beroep-hero-title {
+		font-size: 2.2rem;
+	}
+
+	.beroep-content-section {
+		padding: 1.5rem 1rem;
+	}
+
+	.beroep-content-title {
+		font-size: 2rem;
+	}
+
+	.beroep-description {
+		font-size: 1.1rem;
+		padding: 1rem;
+		text-align: left;
+	}
+
+	.beroep-test-banner {
+		padding: 2rem 1rem;
+	}
+
+	.beroep-test-banner-left {
+		font-size: 2rem;
+	}
+
+	.beroep-test-banner-description {
+		font-size: 1.1rem;
+	}
+
+	.beroep-test-button {
+		padding: 8px 30px;
+		font-size: 1.1rem;
+	}
+}

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import type { ReactNode } from "react";
 import { useKeenSlider } from "keen-slider/react";
+import { useNavigate } from "react-router-dom";
 import "keen-slider/keen-slider.min.css";
 import "../style/Carousel/Beroepencarousel.css";
 import arrowRight from "../assets/arrow-right-carousel.svg";
@@ -18,6 +19,7 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 	leftPadding = "9rem",
 	title
 }) => {
+	const navigate = useNavigate();
 	const [, setCurrentSlide] = useState<number>(0);
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
 		slides: {
@@ -32,6 +34,10 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 	const goToNextSlide = () => {
 		if (!instanceRef.current) return;
 		instanceRef.current.next();
+	};
+
+	const handleBeroepClick = (beroepId: number) => {
+		navigate(`/beroep/${beroepId}`);
 	};
 
 	const cssVariables = useMemo(() => {
@@ -49,6 +55,8 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 						<div
 							key={beroep.id}
 							className="keen-slider__slide beroepen-carousel-slide"
+							onClick={() => handleBeroepClick(beroep.id)}
+							style={{ cursor: "pointer" }}
 						>
 							<div className="beroepen-carousel-slide-container">
 								<div
@@ -66,7 +74,12 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 										} as React.CSSProperties
 									}
 								>
-									<div className="beroepen-carousel-favorite-button">
+									<div
+										className="beroepen-carousel-favorite-button"
+										onClick={(e) => {
+											e.stopPropagation(); // Prevent navigation when clicking the heart
+										}}
+									>
 										<img
 											src={heartOutline}
 											alt="Favorite"

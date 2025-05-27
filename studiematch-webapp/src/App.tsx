@@ -9,6 +9,7 @@ import TweedeGraad from "./pages/Persoonlijkheidtest/TweedeGraad";
 import DerdeGraad from "./pages/Persoonlijkheidtest/DerdeGraad";
 import StudierichtingenVoorbeeld from "./pages/StudierichtingenVoorbeeld";
 import BeroepenVoorbeeld from "./pages/BeroepenVoorbeeld";
+import BeroepDetail from "./pages/Detail/BeroepDetail";
 
 function App() {
 	return (
@@ -36,6 +37,7 @@ function App() {
 					element={<StudierichtingenVoorbeeld />}
 				/>
 				<Route path="/beroepen" element={<BeroepenVoorbeeld />} />
+				<Route path="/beroep/:id" element={<BeroepDetail />} />
 			</Routes>
 		</BrowserRouter>
 	);
