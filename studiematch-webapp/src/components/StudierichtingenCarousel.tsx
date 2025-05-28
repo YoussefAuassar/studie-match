@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import type { ReactNode } from "react";
 import { useKeenSlider } from "keen-slider/react";
+import { useNavigate } from "react-router-dom";
 import "keen-slider/keen-slider.min.css";
 import "../style/Carousel/Studierichtingencarousel.css";
 import arrowRight from "../assets/arrow-right-carousel.svg";
@@ -18,6 +19,7 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	leftPadding = "9rem",
 	title
 }) => {
+	const navigate = useNavigate();
 	const [, setCurrentSlide] = useState<number>(0);
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
 		slides: {
@@ -32,6 +34,10 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	const goToNextSlide = () => {
 		if (!instanceRef.current) return;
 		instanceRef.current.next();
+	};
+
+	const handleStudierichtingClick = (studierichtingId: number) => {
+		navigate(`/studierichting/${studierichtingId}`);
 	};
 
 	const cssVariables = useMemo(() => {
@@ -49,6 +55,8 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 						<div
 							key={studierichting.id}
 							className="keen-slider__slide studierichtingen-carousel-slide"
+							onClick={() => handleStudierichtingClick(studierichting.id)}
+							style={{ cursor: "pointer" }}
 						>
 							<div className="studierichtingen-carousel-slide-container">
 								<div
@@ -56,15 +64,22 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 									style={
 										{
 											"--image-url": `url(${getImageUrl(
-												studierichting.afbeelding
+												studierichting.afbeelding,
+												"studierichtingen"
 											)})`,
 											backgroundImage: `url(${getImageUrl(
-												studierichting.afbeelding
+												studierichting.afbeelding,
+												"studierichtingen"
 											)})`
 										} as React.CSSProperties
 									}
 								>
-									<div className="studierichtingen-carousel-favorite-button">
+									<div
+										className="studierichtingen-carousel-favorite-button"
+										onClick={(e) => {
+											e.stopPropagation(); // Prevent navigation when clicking the heart
+										}}
+									>
 										<img
 											src={heartOutline}
 											alt="Favorite"
