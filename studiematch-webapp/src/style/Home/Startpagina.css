@@ -1,11 +1,19 @@
 /* Basis layout */
+.startpagina-page-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
 .startpagina {
-	background: #fdf6f2;
+	background: #f4f5f9;
 	min-height: 100vh;
 	font-family: "Poppins", sans-serif;
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .startpagina-content {

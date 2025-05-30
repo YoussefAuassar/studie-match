@@ -11,7 +11,7 @@ const DerdeGraad: React.FC = () => {
 	};
 
 	return (
-		<>
+		<div className="persoonlijkheidstest-intro-page-container">
 			<Navigatie />
 			<div className="persoonlijkheidstest-intro-container">
 				<h1>Start jouw studiematch!</h1>
@@ -39,7 +39,7 @@ const DerdeGraad: React.FC = () => {
 					</span>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

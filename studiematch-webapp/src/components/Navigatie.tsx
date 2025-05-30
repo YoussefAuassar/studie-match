@@ -42,9 +42,12 @@ const Navigatie: React.FC = () => {
 						<h3>Start Test</h3>
 						<p>Ontdek welke studierichting bij jou past</p>
 					</li>
-					<li className="navigatie-menu-item">
-						<h3>Opleidingen</h3>
-						<p>Bekijk een overzicht van alle opleidingen</p>
+					<li
+						className="navigatie-menu-item"
+						onClick={() => handleNavigation("/filter-studierichtingen")}
+					>
+						<h3>Studierichtingen</h3>
+						<p>Bekijk een overzicht van alle richtingen</p>
 					</li>
 					<li
 						className="navigatie-menu-item"

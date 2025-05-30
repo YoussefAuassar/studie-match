@@ -41,7 +41,7 @@ const BeroepDetail: React.FC = () => {
 	}
 
 	return (
-		<>
+		<div className="startpagina-page-container">
 			<Navigatie />
 			<div className="beroep-detail-container">
 				<div className="beroep-hero-section">
@@ -83,7 +83,7 @@ const BeroepDetail: React.FC = () => {
 				</div>
 			</div>
 			<Footer />
-		</>
+		</div>
 	);
 };
 

@@ -11,6 +11,7 @@ import StudierichtingenVoorbeeld from "./pages/StudierichtingenVoorbeeld";
 import BeroepenVoorbeeld from "./pages/BeroepenVoorbeeld";
 import BeroepDetail from "./pages/Detail/BeroepDetail";
 import StudierichtingDetail from "./pages/Detail/StudierichtingDetail";
+import FilterStudierichtingen from "./pages/Info/FilterStudierichtingen";
 
 function App() {
 	return (
@@ -40,6 +41,10 @@ function App() {
 				<Route path="/beroepen" element={<BeroepenVoorbeeld />} />
 				<Route path="/beroep/:id" element={<BeroepDetail />} />
 				<Route path="/studierichting/:id" element={<StudierichtingDetail />} />
+				<Route
+					path="/filter-studierichtingen"
+					element={<FilterStudierichtingen />}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);

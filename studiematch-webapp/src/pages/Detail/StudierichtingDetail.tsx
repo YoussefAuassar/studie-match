@@ -43,13 +43,13 @@ const StudierichtingDetail: React.FC = () => {
 	const getGradeText = (grade: number) => {
 		switch (grade) {
 			case 1:
-				return "1ste Graad";
+				return "1ste graad";
 			case 2:
-				return "2de Graad";
+				return "2de graad";
 			case 3:
-				return "3de Graad";
+				return "3de graad";
 			default:
-				return `${grade}de Graad`;
+				return `${grade}de graad`;
 		}
 	};
 
@@ -58,7 +58,7 @@ const StudierichtingDetail: React.FC = () => {
 	}
 
 	return (
-		<>
+		<div className="startpagina-page-container">
 			<Navigatie />
 			<div className="studierichting-detail-container">
 				<div className="studierichting-hero-section">
@@ -188,7 +188,7 @@ const StudierichtingDetail: React.FC = () => {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								curriculumdossier
+								{" curriculumdossier"}
 							</a>
 							.
 						</p>
@@ -196,7 +196,7 @@ const StudierichtingDetail: React.FC = () => {
 				</div>
 			</div>
 			<Footer />
-		</>
+		</div>
 	);
 };
 

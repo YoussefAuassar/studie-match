@@ -15,7 +15,7 @@ const Startpagina = () => {
 	const navigate = useNavigate();
 
 	return (
-		<>
+		<div className="startpagina-page-container">
 			<Navigatie />
 			<div className="startpagina">
 				<div className="startpagina-content">
@@ -267,7 +267,7 @@ const Startpagina = () => {
 				</div>
 			</div>
 			<Footer />
-		</>
+		</div>
 	);
 };
 
