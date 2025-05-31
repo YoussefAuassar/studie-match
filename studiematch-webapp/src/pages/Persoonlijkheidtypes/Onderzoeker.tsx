@@ -1,5 +1,5 @@
-import "../../style/Persoonlijkheidstypes/Realistisch.css";
-import realistisch from "../../assets/realistisch-type.png";
+import "../../style/Persoonlijkheidstypes/Onderzoeker.css";
+import onderzoeker from "../../assets/onderzoeker-type.png";
 import arrowDown from "../../assets/arrow-down.svg";
 import { motion, useSpring } from "framer-motion";
 import Navigatie from "../../components/Navigatie";
@@ -15,7 +15,7 @@ import {
 } from "../../services/supabaseService";
 import BeroepenCarousel from "../../components/BeroepenCarousel";
 
-const Realistisch = () => {
+const Onderzoeker = () => {
 	const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
 	const [studierichtingen, setStudierichtingen] = useState<Studierichting[]>(
 		[]
@@ -31,8 +31,8 @@ const Realistisch = () => {
 			try {
 				setLoading(true);
 				const [studierichtingenData, beroepenData] = await Promise.all([
-					fetchStudierichtingen(undefined, undefined, ["Realistisch"]),
-					fetchBeroepen(["Realistisch"])
+					fetchStudierichtingen(undefined, undefined, ["Onderzoeker"]),
+					fetchBeroepen(["Onderzoeker"])
 				]);
 
 				setStudierichtingen(studierichtingenData);
@@ -68,14 +68,14 @@ const Realistisch = () => {
 	};
 
 	return (
-		<div className="realistisch-page-container">
+		<div className="onderzoeker-page-container">
 			<Navigatie />
-			<div className="realistisch-container">
-				<div className="realistisch-content-container">
-					<div className="realistisch-text-content">
+			<div className="onderzoeker-container">
+				<div className="onderzoeker-content-container">
+					<div className="onderzoeker-text-content">
 						{/* H1 Typewriter Effect */}
 						<motion.h1>
-							{"Realistisch".split("").map((char, index) => (
+							{"Onderzoeker".split("").map((char, index) => (
 								<motion.span
 									key={index}
 									initial={{ opacity: 0 }}
@@ -88,8 +88,8 @@ const Realistisch = () => {
 						</motion.h1>
 
 						{/* Subtitle Typewriter Effect */}
-						<motion.p className="realistisch-subtitle">
-							{"Met jouw handen bouw je aan een tastbare wereld"
+						<motion.p className="onderzoeker-subtitle">
+							{"Met kennis en nieuwsgierigheid ontdek jij de wereld"
 								.split("")
 								.map((char, index) => (
 									<motion.span
@@ -104,32 +104,34 @@ const Realistisch = () => {
 						</motion.p>
 
 						<motion.div
-							className="realistisch-text-content"
+							className="onderzoeker-text-content"
 							initial={{ x: -100, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.6, delay: 2.8 }}
 						>
 							<p>
-								<span className="realistisch-bold">
-									De realistische persoonlijkheid
+								<span className="onderzoeker-bold">
+									De onderzoekende persoonlijkheid
 								</span>{" "}
-								is een doener. Iemand die houdt van aanpakken en zich het liefst
-								bezighoudt met praktische en fysieke taken. Met een sterke focus
-								op de werkelijkheid en een voorkeur voor actie, werkt hij graag
-								met zijn handen, machines, gereedschap of technische systemen.
+								is een echte denker. Iemand die gedreven wordt door
+								nieuwsgierigheid en zich het liefst bezighoudt met analyseren,
+								observeren en begrijpen hoe dingen in elkaar zitten. Met een
+								scherp verstand en een diepgaande interesse in wetenschap of
+								theorie zoekt hij naar logische verklaringen en nieuwe
+								inzichten.
 							</p>
 							<p>
-								Hij zoekt geen theoretische concepten of abstracte ideeën, maar
-								duidelijke taken en concrete resultaten. Wat hij doet hoeft niet
-								ingewikkeld te zijn, zolang het maar nuttig en functioneel is.
-								De wereld is voor hem een plek om te bouwen, te repareren en te
-								verbeteren – en via zijn werk maakt hij het leven van anderen
-								praktischer en beter.
+								Hij zoekt geen routine of sociale druk, maar complexe
+								vraagstukken en intellectuele uitdaging. Wat hij onderzoekt
+								hoeft niet direct toepasbaar te zijn, zolang het maar leidt tot
+								begrip en verdieping. De wereld is voor hem een puzzel vol
+								verborgen verbanden en via zijn denkwerk draagt hij bij aan
+								kennis, ontdekking en vooruitgang.
 							</p>
 						</motion.div>
 					</div>
 					<motion.div
-						className="realistisch-image-content"
+						className="onderzoeker-image-content"
 						initial={{ y: 100, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.8, delay: 1.8, ease: "easeOut" }}
@@ -137,8 +139,8 @@ const Realistisch = () => {
 						onMouseLeave={handleMouseLeave}
 					>
 						<motion.img
-							src={realistisch}
-							alt="Realistisch type"
+							src={onderzoeker}
+							alt="Onderzoeker type"
 							style={{
 								rotateX,
 								rotateY,
@@ -148,11 +150,11 @@ const Realistisch = () => {
 						/>
 					</motion.div>
 				</div>
-				<div className="realistisch-scroll-indicator">
+				<div className="onderzoeker-scroll-indicator">
 					<img
 						src={arrowDown}
 						alt="Scroll beneden"
-						className="realistisch-arrow-icon"
+						className="onderzoeker-arrow-icon"
 					/>
 				</div>
 			</div>
@@ -161,9 +163,9 @@ const Realistisch = () => {
 					<StudierichtingenCarousel
 						studierichtingen={studierichtingen}
 						title={
-							<div className="realistisch-section-title">
-								<span style={{ color: "#48A6BB" }}>Studierichtingen</span> voor
-								Realistisch
+							<div className="onderzoeker-section-title">
+								<span style={{ color: "#5C4E9B" }}>Studierichtingen</span> voor
+								Onderzoeker
 							</div>
 						}
 					/>
@@ -174,9 +176,9 @@ const Realistisch = () => {
 					<BeroepenCarousel
 						beroepen={beroepen}
 						title={
-							<div className="realistisch-section-title">
-								<span style={{ color: "#48A6BB" }}>Beroepen</span> voor
-								Realistisch
+							<div className="onderzoeker-section-title">
+								<span style={{ color: "#5C4E9B" }}>Beroepen</span> voor
+								Onderzoeker
 							</div>
 						}
 					/>
@@ -184,7 +186,7 @@ const Realistisch = () => {
 			)}
 			<div style={{ marginTop: "4rem", marginBottom: "4rem" }}>
 				<PersoonlijkheidTypesCarousel
-					currentType="Realistisch"
+					currentType="Onderzoeker"
 					title={
 						<div className="persoonlijkheid-carousel-title">Andere types</div>
 					}
@@ -195,5 +197,4 @@ const Realistisch = () => {
 	);
 };
 
-export default Realistisch;
-
+export default Onderzoeker;

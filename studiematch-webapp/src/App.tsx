@@ -2,6 +2,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Startpagina from "./pages/Home/Startpagina";
 import PersoonlijkheidstypesOverzicht from "./pages/Info/PersoonlijkheidstypesOverzicht";
 import Artistiek from "./pages/Persoonlijkheidtypes/Artistiek";
+import Conventioneel from "./pages/Persoonlijkheidtypes/Conventioneel";
+import Sociaal from "./pages/Persoonlijkheidtypes/Sociaal";
+import Ondernemend from "./pages/Persoonlijkheidtypes/Ondernemend";
+import Realistisch from "./pages/Persoonlijkheidtypes/Realistisch";
+import Onderzoeker from "./pages/Persoonlijkheidtypes/Onderzoeker";
 import Persoonlijkheidstest from "./pages/Persoonlijkheidtest/Persoonlijkheidstest";
 import TestResultaten from "./pages/Persoonlijkheidtest/TestResultaten";
 import PersoonlijkheidstestIntro from "./pages/Persoonlijkheidtest/PersoonlijkheidstestIntro";
@@ -23,6 +28,11 @@ function App() {
 					element={<PersoonlijkheidstypesOverzicht />}
 				/>
 				<Route path="/artistiek" element={<Artistiek />} />
+				<Route path="/conventioneel" element={<Conventioneel />} />
+				<Route path="/sociaal" element={<Sociaal />} />
+				<Route path="/ondernemend" element={<Ondernemend />} />
+				<Route path="/realistisch" element={<Realistisch />} />
+				<Route path="/onderzoeker" element={<Onderzoeker />} />
 				<Route
 					path="/persoonlijkheidstest"
 					element={<Persoonlijkheidstest />}

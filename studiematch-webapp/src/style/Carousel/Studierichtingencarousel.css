@@ -85,9 +85,9 @@
 	width: 90%;
 }
 
-.studierichtingen-carousel-next-button {
+.studierichtingen-carousel-next-button,
+.studierichtingen-carousel-prev-button {
 	position: absolute;
-	right: 50px;
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 10;
@@ -102,7 +102,17 @@
 	border-radius: 50%;
 }
 
-.studierichtingen-carousel-next-button:hover {
+.studierichtingen-carousel-next-button {
+	right: 50px;
+}
+
+.studierichtingen-carousel-prev-button {
+	left: 50px;
+	display: none; /* Hidden by default, will be shown via JS when needed */
+}
+
+.studierichtingen-carousel-next-button:hover,
+.studierichtingen-carousel-prev-button:hover {
 	background-color: #333;
 }
 
@@ -115,50 +125,8 @@
 	animation: none !important;
 }
 
-.studierichtingen-carousel-favorite-button {
-	position: absolute;
-	top: 12px;
-	right: 12px;
-	width: 40px;
-	height: 40px;
-	background-color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	z-index: 3;
-}
-
-.studierichtingen-carousel-heart-icon {
-	width: 24px;
-	height: 24px;
-	transition: all 0.2s ease;
-}
-
-.studierichtingen-carousel-favorite-button:hover
-	.studierichtingen-carousel-heart-icon {
-	filter: invert(27%) sepia(91%) saturate(2352%) hue-rotate(346deg)
-		brightness(97%) contrast(97%);
-	animation: heartBeat 0.8s ease-in-out;
-}
-
-@keyframes heartBeat {
-	0% {
-		transform: scale(1);
-	}
-	25% {
-		transform: scale(1.2);
-	}
-	50% {
-		transform: scale(0.95);
-	}
-	75% {
-		transform: scale(1.1);
-	}
-	100% {
-		transform: scale(1);
-	}
+.studierichtingen-carousel-prev-button .studierichtingen-carousel-arrow-icon {
+	transform: rotate(180deg) !important;
 }
 
 @media (max-width: 768px) {
@@ -184,15 +152,9 @@
 		font-size: 1.4rem;
 	}
 
-	.studierichtingen-carousel-next-button {
-		right: 20px;
-		width: 35px;
-		height: 35px;
-	}
-
-	.studierichtingen-carousel-arrow-icon {
-		width: 20px;
-		height: 20px;
+	.studierichtingen-carousel-next-button,
+	.studierichtingen-carousel-prev-button {
+		display: none !important;
 	}
 }
 

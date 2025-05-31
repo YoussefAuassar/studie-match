@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import artistiek from "../../assets/artistiek-type.png";
 import sociaal from "../../assets/sociaal-type.png";
 import ondernemend from "../../assets/ondernemend-type.png";
+import realistisch from "../../assets/realistisch-type.png";
+import onderzoeker from "../../assets/onderzoeker-type.png";
+import conventioneel from "../../assets/conventioneel-type.png";
 import Navigatie from "../../components/Navigatie";
 import { motion } from "framer-motion";
 
@@ -56,11 +59,12 @@ const PersoonlijkheidstypesOverzicht = () => {
 					</div>
 					<div
 						className="persoonlijkheidstypes-overzicht-square"
-						style={{ backgroundColor: "#48A6BB" }}
+						style={{ backgroundColor: "#48A6BB", cursor: "pointer" }}
+						onClick={() => navigate("/realistisch")}
 					>
 						<motion.img
-							src="/path-to-your-image2.jpg"
-							alt=""
+							src={realistisch}
+							alt="realistisch type"
 							variants={imageAnimation}
 						/>
 						<h1 className="persoonlijkheidstypes-overzicht-square-text">
@@ -69,7 +73,22 @@ const PersoonlijkheidstypesOverzicht = () => {
 					</div>
 					<div
 						className="persoonlijkheidstypes-overzicht-square"
-						style={{ backgroundColor: "#FF6366" }}
+						style={{ backgroundColor: "#87CA83", cursor: "pointer" }}
+						onClick={() => navigate("/sociaal")}
+					>
+						<motion.img
+							src={sociaal}
+							alt="sociaal type"
+							variants={imageAnimation}
+						/>
+						<h1 className="persoonlijkheidstypes-overzicht-square-text">
+							Sociaal
+						</h1>
+					</div>
+					<div
+						className="persoonlijkheidstypes-overzicht-square"
+						style={{ backgroundColor: "#FF6366", cursor: "pointer" }}
+						onClick={() => navigate("/ondernemend")}
 					>
 						<motion.img
 							src={ondernemend}
@@ -82,24 +101,12 @@ const PersoonlijkheidstypesOverzicht = () => {
 					</div>
 					<div
 						className="persoonlijkheidstypes-overzicht-square"
-						style={{ backgroundColor: "#87CA83" }}
+						style={{ backgroundColor: "#5C4E9B", cursor: "pointer" }}
+						onClick={() => navigate("/onderzoeker")}
 					>
 						<motion.img
-							src={sociaal}
-							alt="artistiek type"
-							variants={imageAnimation}
-						/>
-						<h1 className="persoonlijkheidstypes-overzicht-square-text">
-							Sociaal
-						</h1>
-					</div>
-					<div
-						className="persoonlijkheidstypes-overzicht-square"
-						style={{ backgroundColor: "#5C4E9B" }}
-					>
-						<motion.img
-							src="/path-to-your-image5.jpg"
-							alt=""
+							src={onderzoeker}
+							alt="onderzoeker type"
 							variants={imageAnimation}
 						/>
 						<h1 className="persoonlijkheidstypes-overzicht-square-text">
@@ -108,11 +115,12 @@ const PersoonlijkheidstypesOverzicht = () => {
 					</div>
 					<div
 						className="persoonlijkheidstypes-overzicht-square"
-						style={{ backgroundColor: "#009298" }}
+						style={{ backgroundColor: "#009298", cursor: "pointer" }}
+						onClick={() => navigate("/conventioneel")}
 					>
 						<motion.img
-							src="/path-to-your-image6.jpg"
-							alt=""
+							src={conventioneel}
+							alt="conventioneel type"
 							variants={imageAnimation}
 						/>
 						<h1 className="persoonlijkheidstypes-overzicht-square-text">

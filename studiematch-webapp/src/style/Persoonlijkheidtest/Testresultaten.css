@@ -54,6 +54,12 @@
 	transition: transform 0.3s ease;
 }
 
+.ptest-results-image-realistisch {
+	width: 700px;
+	height: 440px;
+	top: 52%;
+}
+
 .ptest-results-card:hover .ptest-results-image {
 	transform: translate(-50%, -50%) scale(1.1);
 }

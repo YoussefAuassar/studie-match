@@ -20,7 +20,7 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	title
 }) => {
 	const navigate = useNavigate();
-	const [, setCurrentSlide] = useState<number>(0);
+	const [currentSlide, setCurrentSlide] = useState<number>(0);
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
 		slides: {
 			perView: "auto",
@@ -34,6 +34,11 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	const goToNextSlide = () => {
 		if (!instanceRef.current) return;
 		instanceRef.current.next();
+	};
+
+	const goToPrevSlide = () => {
+		if (!instanceRef.current) return;
+		instanceRef.current.prev();
 	};
 
 	const handleStudierichtingClick = (studierichtingId: number) => {
@@ -99,6 +104,23 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 						</div>
 					))}
 				</div>
+
+				{currentSlide > 0 && (
+					<div
+						className="studierichtingen-carousel-prev-button"
+						onClick={goToPrevSlide}
+						style={{ display: "flex" }}
+					>
+						<img
+							src={arrowRight}
+							alt="Previous"
+							width="48"
+							height="48"
+							className="studierichtingen-carousel-arrow-icon"
+							style={{ pointerEvents: "none" }}
+						/>
+					</div>
+				)}
 
 				<div
 					className="studierichtingen-carousel-next-button"

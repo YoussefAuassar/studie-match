@@ -52,9 +52,9 @@
 	z-index: 2;
 }
 
-.persoonlijkheid-carousel-next-button {
+.persoonlijkheid-carousel-next-button,
+.persoonlijkheid-carousel-prev-button {
 	position: absolute;
-	right: 50px;
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 10;
@@ -69,7 +69,17 @@
 	border-radius: 50%;
 }
 
-.persoonlijkheid-carousel-next-button:hover {
+.persoonlijkheid-carousel-next-button {
+	right: 50px;
+}
+
+.persoonlijkheid-carousel-prev-button {
+	left: 50px;
+	display: none; /* Hidden by default, will be shown via JS when needed */
+}
+
+.persoonlijkheid-carousel-next-button:hover,
+.persoonlijkheid-carousel-prev-button:hover {
 	background-color: #333;
 }
 
@@ -80,6 +90,10 @@
 	transform: none !important;
 	transition: none !important;
 	animation: none !important;
+}
+
+.persoonlijkheid-carousel-prev-button .persoonlijkheid-carousel-arrow-icon {
+	transform: rotate(180deg) !important;
 }
 
 @media (max-width: 768px) {
@@ -96,15 +110,9 @@
 		font-size: 3.5rem;
 	}
 
-	.persoonlijkheid-carousel-next-button {
-		right: 20px;
-		width: 35px;
-		height: 35px;
-	}
-
-	.persoonlijkheid-carousel-arrow-icon {
-		width: 20px;
-		height: 20px;
+	.persoonlijkheid-carousel-next-button,
+	.persoonlijkheid-carousel-prev-button {
+		display: none !important;
 	}
 
 	.persoonlijkheid-carousel-title {

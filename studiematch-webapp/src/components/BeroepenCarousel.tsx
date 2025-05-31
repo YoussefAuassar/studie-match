@@ -20,7 +20,7 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 	title
 }) => {
 	const navigate = useNavigate();
-	const [, setCurrentSlide] = useState<number>(0);
+	const [currentSlide, setCurrentSlide] = useState<number>(0);
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
 		slides: {
 			perView: "auto",
@@ -34,6 +34,11 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 	const goToNextSlide = () => {
 		if (!instanceRef.current) return;
 		instanceRef.current.next();
+	};
+
+	const goToPrevSlide = () => {
+		if (!instanceRef.current) return;
+		instanceRef.current.prev();
 	};
 
 	const handleBeroepClick = (beroepId: number) => {
@@ -99,6 +104,23 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 						</div>
 					))}
 				</div>
+
+				{currentSlide > 0 && (
+					<div
+						className="beroepen-carousel-prev-button"
+						onClick={goToPrevSlide}
+						style={{ display: "flex" }}
+					>
+						<img
+							src={arrowRight}
+							alt="Previous"
+							width="48"
+							height="48"
+							className="beroepen-carousel-arrow-icon"
+							style={{ pointerEvents: "none" }}
+						/>
+					</div>
+				)}
 
 				<div className="beroepen-carousel-next-button" onClick={goToNextSlide}>
 					<img

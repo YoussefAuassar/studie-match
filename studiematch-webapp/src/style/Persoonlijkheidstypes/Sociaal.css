@@ -1,0 +1,252 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow-y: auto !important;
+	background-color: #f4f5f9;
+}
+
+.sociaal-page-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.sociaal-container {
+	background-color: #87ca83;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+.sociaal-content-container {
+	margin: 0 auto;
+	max-width: 1230px;
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+	position: relative;
+	flex: 1;
+}
+
+.sociaal-text-content {
+	flex: 1;
+}
+
+.sociaal-text-content h1 {
+	margin-bottom: 1rem;
+	color: #ffffff;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 80px;
+}
+
+.sociaal-text-content .sociaal-subtitle {
+	font-size: 1rem;
+	margin-bottom: 2rem;
+	color: #ffffff;
+}
+
+.sociaal-text-content p {
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+	color: #ffffff;
+	font-family: "poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1rem;
+}
+
+.sociaal-text-content .sociaal-bold {
+	font-weight: bold;
+}
+
+.sociaal-image-content {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 1500px;
+	cursor: pointer;
+	padding: 2rem;
+	transform-style: preserve-3d;
+}
+
+.sociaal-image-content img {
+	max-height: 550px;
+	width: auto;
+	object-fit: contain;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+
+.sociaal-scroll-indicator {
+	position: absolute;
+	right: 3.4rem;
+	bottom: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #ffffff;
+	font-size: 1rem;
+	z-index: 100;
+	font-family: "poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.sociaal-arrow-icon {
+	width: 24px;
+	height: 24px;
+	animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(-5px);
+	}
+}
+
+.sociaal-carousel-section {
+	margin-top: 4rem;
+	padding: 2rem 0;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sociaal-carousel-section h2 {
+	text-align: center;
+	color: #ffffff;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: 400;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+.sociaal-section-title {
+	font-size: 3rem;
+	margin-bottom: 2rem;
+	font-family: "Cal Sans", sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.sociaal-content-container {
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+
+	.sociaal-text-content h1 {
+		font-size: 60px;
+	}
+
+	.sociaal-image-content img {
+		max-height: 450px;
+	}
+
+	.sociaal-section-title {
+		font-size: 2.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.sociaal-container {
+		padding: 1rem;
+		min-height: auto;
+	}
+
+	.sociaal-content-container {
+		flex-direction: column;
+		gap: 2rem;
+		padding: 2rem 1rem;
+		margin-top: 3rem;
+	}
+
+	.sociaal-text-content {
+		text-align: left;
+		margin-top: 40px;
+	}
+
+	.sociaal-text-content h1 {
+		font-size: 48px;
+		margin-bottom: 0.5rem;
+		text-align: left;
+	}
+
+	.sociaal-text-content .sociaal-subtitle {
+		font-size: 0.9rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.sociaal-text-content p {
+		font-size: 0.9rem;
+		text-align: left;
+	}
+
+	.sociaal-image-content {
+		padding: 1rem;
+	}
+
+	.sociaal-image-content img {
+		max-height: 350px;
+	}
+
+	.sociaal-scroll-indicator {
+		display: none;
+	}
+
+	.sociaal-section-title {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.sociaal-container {
+		padding: 0.5rem;
+	}
+
+	.sociaal-content-container {
+		padding: 1rem 0.5rem;
+		margin-top: 2rem;
+	}
+
+	.sociaal-text-content h1 {
+		font-size: 36px;
+	}
+
+	.sociaal-text-content .sociaal-subtitle {
+		font-size: 0.8rem;
+	}
+
+	.sociaal-text-content p {
+		font-size: 0.85rem;
+		margin-bottom: 1rem;
+	}
+
+	.sociaal-image-content {
+		padding: 0.5rem;
+	}
+
+	.sociaal-image-content img {
+		max-height: 250px;
+	}
+
+	.sociaal-section-title {
+		font-size: 1.8rem;
+	}
+}

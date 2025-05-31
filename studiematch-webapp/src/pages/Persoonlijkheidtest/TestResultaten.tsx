@@ -5,6 +5,9 @@ import "../../style/Persoonlijkheidtest/Testresultaten.css";
 import artistiek from "../../assets/artistiek-type.png";
 import sociaal from "../../assets/sociaal-type.png";
 import ondernemend from "../../assets/ondernemend-type.png";
+import realistisch from "../../assets/realistisch-type.png";
+import onderzoeker from "../../assets/onderzoeker-type.png";
+import conventioneel from "../../assets/conventioneel-type.png";
 import Navigatie from "../../components/Navigatie";
 import StudierichtingenCarousel from "../../components/StudierichtingenCarousel";
 import BeroepenCarousel from "../../components/BeroepenCarousel";
@@ -30,6 +33,12 @@ const getImageForType = (type: string) => {
 			return sociaal;
 		case "ondernemend":
 			return ondernemend;
+		case "realistisch":
+			return realistisch;
+		case "onderzoeker":
+			return onderzoeker;
+		case "conventioneel":
+			return conventioneel;
 		default:
 			return artistiek;
 	}
@@ -139,7 +148,11 @@ const TestResultaten = () => {
 							<img
 								src={getImageForType(type.name)}
 								alt={type.name}
-								className="ptest-results-image"
+								className={`ptest-results-image ${
+									type.name.toLowerCase() === "realistisch"
+										? "ptest-results-image-realistisch"
+										: ""
+								}`}
 							/>
 							<motion.div
 								className="ptest-results-percentage"

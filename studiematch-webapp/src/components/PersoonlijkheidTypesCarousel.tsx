@@ -60,7 +60,7 @@ const PersoonlijkheidTypesCarousel: React.FC<
 	PersoonlijkheidTypesCarouselProps
 > = ({ title, currentType }) => {
 	const navigate = useNavigate();
-	const [, setCurrentSlide] = useState<number>(0);
+	const [currentSlide, setCurrentSlide] = useState<number>(0);
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
 		slides: {
 			perView: "auto",
@@ -78,6 +78,11 @@ const PersoonlijkheidTypesCarousel: React.FC<
 	const goToNextSlide = () => {
 		if (!instanceRef.current) return;
 		instanceRef.current.next();
+	};
+
+	const goToPrevSlide = () => {
+		if (!instanceRef.current) return;
+		instanceRef.current.prev();
 	};
 
 	return (
@@ -104,6 +109,23 @@ const PersoonlijkheidTypesCarousel: React.FC<
 					))}
 				</div>
 
+				{currentSlide > 0 && (
+					<div
+						className="persoonlijkheid-carousel-prev-button"
+						onClick={goToPrevSlide}
+						style={{ display: "flex" }}
+					>
+						<img
+							src={arrowRight}
+							alt="Previous"
+							width="48"
+							height="48"
+							className="persoonlijkheid-carousel-arrow-icon"
+							style={{ pointerEvents: "none" }}
+						/>
+					</div>
+				)}
+
 				<div
 					className="persoonlijkheid-carousel-next-button"
 					onClick={goToNextSlide}
@@ -114,6 +136,7 @@ const PersoonlijkheidTypesCarousel: React.FC<
 						width="48"
 						height="48"
 						className="persoonlijkheid-carousel-arrow-icon"
+						style={{ pointerEvents: "none" }}
 					/>
 				</div>
 			</div>
