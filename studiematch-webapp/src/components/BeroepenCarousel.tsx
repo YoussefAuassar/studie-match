@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "keen-slider/keen-slider.min.css";
 import "../style/Carousel/Beroepencarousel.css";
 import arrowRight from "../assets/arrow-right-carousel.svg";
-import heartOutline from "../assets/heart-outline.svg";
 import { type Beroep, getImageUrl } from "../services/supabaseService";
 
 interface BeroepenCarouselProps {
@@ -78,22 +77,7 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 											)})`
 										} as React.CSSProperties
 									}
-								>
-									<div
-										className="beroepen-carousel-favorite-button"
-										onClick={(e) => {
-											e.stopPropagation(); // Prevent navigation when clicking the heart
-										}}
-									>
-										<img
-											src={heartOutline}
-											alt="Favorite"
-											width="24"
-											height="24"
-											className="beroepen-carousel-heart-icon"
-										/>
-									</div>
-								</div>
+								></div>
 
 								<div className="beroepen-carousel-slide-title-overlay">
 									<h3 className="beroepen-carousel-slide-title">
