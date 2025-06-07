@@ -43,14 +43,17 @@ const FilterStudierichtingen: React.FC = () => {
 		graad: [1, 2, 3],
 		jaar: [1, 2, 3, 4, 5, 6],
 		studiedomein: [
-			"Economie en Organisatie",
+			"Domeinoverschrijdend",
+			"Economie en organisatie",
+			"Kunst en creatie",
+			"Land- en tuinbouw",
+			"Maatschappij en welzijn",
+			"Sport",
 			"STEM",
-			"Taal en Cultuur",
-			"Kunst en Creatie",
-			"Maatschappij en Welzijn",
-			"Sport"
+			"Taal en cultuur",
+			"Voeding en horeca"
 		],
-		finaliteit: ["Doorstroom", "Dubbel", "Arbeidsmarkt"],
+		finaliteit: ["Doorstroom", "Dubbele", "Arbeidsmarkt"],
 		persoonlijkheid: [
 			"Artistiek",
 			"Sociaal",
@@ -137,8 +140,8 @@ const FilterStudierichtingen: React.FC = () => {
 		});
 	};
 
-	const handleStudierichtingClick = (id: number) => {
-		navigate(`/studierichting/${id}`);
+	const handleStudierichtingClick = (id: number, jaar: number) => {
+		navigate(`/studierichting/${id}?jaar=${jaar}`);
 	};
 
 	const loadMore = () => {
@@ -187,7 +190,24 @@ const FilterStudierichtingen: React.FC = () => {
 				return false;
 			}
 			return true;
-		});
+		})
+		.flatMap((studierichting) => {
+			// If there's a year filter, only create entries for the filtered years
+			if (filters.jaar.length > 0) {
+				return filters.jaar
+					.filter((jaar) => studierichting.jaren.includes(jaar))
+					.map((jaar) => ({
+						...studierichting,
+						currentJaar: jaar
+					}));
+			}
+			// Otherwise, create an entry for each year the studierichting is available in
+			return studierichting.jaren.map((jaar) => ({
+				...studierichting,
+				currentJaar: jaar
+			}));
+		})
+		.sort((a, b) => a.currentJaar - b.currentJaar);
 
 	return (
 		<div className="filter-studierichtingen-page-container">
@@ -274,7 +294,7 @@ const FilterStudierichtingen: React.FC = () => {
 												<span>
 													{typeof option === "number"
 														? `${option}${
-																filterName === "graad" ? "e jaar" : "e jaar"
+																filterName === "graad" ? "e graad" : "e jaar"
 														  }`
 														: option}
 												</span>
@@ -303,10 +323,13 @@ const FilterStudierichtingen: React.FC = () => {
 									.slice(0, visibleItems)
 									.map((studierichting) => (
 										<div
-											key={studierichting.id}
+											key={`${studierichting.id}-${studierichting.currentJaar}`}
 											className="studierichting-card"
 											onClick={() =>
-												handleStudierichtingClick(studierichting.id)
+												handleStudierichtingClick(
+													studierichting.id,
+													studierichting.currentJaar
+												)
 											}
 										>
 											<div className="studierichting-image-container">
@@ -328,12 +351,7 @@ const FilterStudierichtingen: React.FC = () => {
 														{studierichting.naam_richting}
 													</h3>
 													<div className="studierichting-details">
-														<span>
-															{filters.jaar.length > 0
-																? `${filters.jaar[0]}e`
-																: `${studierichting.jaren[0]}e`}{" "}
-															Jaar
-														</span>
+														<span>{studierichting.currentJaar}e Jaar</span>
 														<span className="separator">|</span>
 														<span>{studierichting.studiedomein || "Geen"}</span>
 														<span className="separator">|</span>

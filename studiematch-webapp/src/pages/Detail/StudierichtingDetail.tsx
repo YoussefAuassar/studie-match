@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import type { Studierichting } from "../../services/supabaseService";
 import { supabase, getImageUrl } from "../../services/supabaseService";
 import Navigatie from "../../components/Navigatie";
@@ -11,6 +11,7 @@ import diplomaIcon from "../../assets/diploma-icon.svg";
 const StudierichtingDetail: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
 	const navigate = useNavigate();
+	const [searchParams] = useSearchParams();
 	const [studierichting, setStudierichting] = useState<Studierichting | null>(
 		null
 	);
@@ -57,6 +58,10 @@ const StudierichtingDetail: React.FC = () => {
 		return <div>Loading...</div>;
 	}
 
+	const selectedYear = searchParams.get("jaar")
+		? parseInt(searchParams.get("jaar")!)
+		: studierichting.jaren[0];
+
 	return (
 		<div className="startpagina-page-container">
 			<Navigatie />
@@ -81,14 +86,12 @@ const StudierichtingDetail: React.FC = () => {
 				<div className="studierichting-info-section">
 					<div className="studierichting-info-box">
 						<div className="studierichting-info-icon-wrapper with-background">
-							<span className="studierichting-year-number">
-								{studierichting.jaren[0]}
-							</span>
+							<span className="studierichting-year-number">{selectedYear}</span>
 						</div>
 						<div className="studierichting-info-content">
 							<div className="studierichting-info-label">Jaar</div>
 							<div className="studierichting-info-value">
-								{studierichting.jaren[0]}e jaar
+								{selectedYear}e jaar
 							</div>
 						</div>
 					</div>
