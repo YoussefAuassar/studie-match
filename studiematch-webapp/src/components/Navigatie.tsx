@@ -63,10 +63,6 @@ const Navigatie: React.FC = () => {
 						<h3>Over Studie Match</h3>
 						<p>De missie achter Studdiematch</p>
 					</li>
-					<li className="navigatie-menu-item">
-						<h3>Stubbie</h3>
-						<p>Jouw AI-studiebegeleider</p>
-					</li>
 				</ul>
 			</div>
 			{menuOpen && (

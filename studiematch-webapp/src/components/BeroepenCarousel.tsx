@@ -11,12 +11,23 @@ interface BeroepenCarouselProps {
 	beroepen: Beroep[];
 	leftPadding?: string;
 	title?: ReactNode;
+	showPersonalityIndicators?: boolean;
 }
+
+const typeColors: { [key: string]: string } = {
+	Artistiek: "#A883CA",
+	Sociaal: "#87CA83",
+	Ondernemend: "#FF6366",
+	Onderzoeker: "#5C4E9B",
+	Conventioneel: "#009298",
+	Realistisch: "#48A6BB"
+};
 
 const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 	beroepen,
 	leftPadding = "9rem",
-	title
+	title,
+	showPersonalityIndicators = false
 }) => {
 	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -83,6 +94,18 @@ const BeroepenCarousel: React.FC<BeroepenCarouselProps> = ({
 									<h3 className="beroepen-carousel-slide-title">
 										{beroep.naam_beroep}
 									</h3>
+									{showPersonalityIndicators && (
+										<div className="beroepen-carousel-personality-types">
+											{beroep.persoonlijkheidstype.map((type) => (
+												<div
+													key={type}
+													className="beroepen-carousel-personality-indicator"
+													style={{ backgroundColor: typeColors[type] }}
+													title={type}
+												/>
+											))}
+										</div>
+									)}
 								</div>
 							</div>
 						</div>

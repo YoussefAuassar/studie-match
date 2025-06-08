@@ -177,6 +177,7 @@ const TestResultaten = () => {
 										Studierichtingen voor jou
 									</h1>
 								}
+								showPersonalityIndicators={true}
 							/>
 						</div>
 					)}
@@ -189,6 +190,7 @@ const TestResultaten = () => {
 										Bijpassende beroepen
 									</h1>
 								}
+								showPersonalityIndicators={true}
 							/>
 						</div>
 					)}

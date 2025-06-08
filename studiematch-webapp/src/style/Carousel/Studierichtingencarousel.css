@@ -83,6 +83,50 @@
 	font-weight: 500;
 	font-size: 1.7rem;
 	width: 90%;
+	margin-bottom: 0.8rem;
+}
+
+.studierichtingen-carousel-personality-types {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.studierichtingen-carousel-personality-indicator {
+	width: 2.5rem;
+	height: 0.75rem;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+	position: relative;
+}
+
+.studierichtingen-carousel-personality-indicator:hover {
+	transform: scale(1.1);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.studierichtingen-carousel-personality-indicator::after {
+	content: attr(title);
+	position: absolute;
+	bottom: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	padding: 0.3rem 0.6rem;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	font-family: "Poppins", sans-serif;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.2s ease;
+}
+
+.studierichtingen-carousel-personality-indicator:hover::after {
+	opacity: 1;
+	visibility: visible;
+	bottom: 140%;
 }
 
 .studierichtingen-carousel-next-button,
