@@ -56,7 +56,10 @@ const Navigatie: React.FC = () => {
 						<h3>Persoonlijkheidstypes</h3>
 						<p>Maak kennis met de 6 persoonlijkheidstypes</p>
 					</li>
-					<li className="navigatie-menu-item">
+					<li
+						className="navigatie-menu-item"
+						onClick={() => handleNavigation("/over-ons")}
+					>
 						<h3>Over Studie Match</h3>
 						<p>De missie achter Studdiematch</p>
 					</li>

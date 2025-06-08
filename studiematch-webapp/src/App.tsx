@@ -17,6 +17,7 @@ import BeroepenVoorbeeld from "./pages/BeroepenVoorbeeld";
 import BeroepDetail from "./pages/Detail/BeroepDetail";
 import StudierichtingDetail from "./pages/Detail/StudierichtingDetail";
 import FilterStudierichtingen from "./pages/Info/FilterStudierichtingen";
+import OverOns from "./pages/Info/OverOns";
 
 function App() {
 	return (
@@ -55,6 +56,7 @@ function App() {
 					path="/filter-studierichtingen"
 					element={<FilterStudierichtingen />}
 				/>
+				<Route path="/over-ons" element={<OverOns />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -1,0 +1,321 @@
+.over-ons-page-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+.over-ons {
+	flex: 1;
+	padding: 120px 2.8rem 2.8rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+	box-sizing: border-box;
+}
+
+.over-ons h1 {
+	font-family: "Cal Sans", sans-serif;
+	font-size: 4.5rem;
+	color: white;
+	font-weight: normal;
+	background-color: #47bda0;
+	padding: 0em 0.3em;
+	display: inline-block;
+	margin: 0.55em 0 2rem 0;
+}
+
+.over-ons p {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.8;
+	color: #333;
+	margin-bottom: 1.5rem;
+}
+
+.over-ons-missie-container {
+	display: flex;
+	gap: 4rem;
+	align-items: flex-start;
+	margin-bottom: 0;
+	padding-top: 2rem;
+	position: relative;
+	z-index: 2;
+}
+
+.over-ons-missie {
+	width: 68%;
+	order: 1;
+}
+
+.aanpak-content {
+	margin: 0 auto;
+	margin-top: 7rem;
+	width: 89%;
+}
+
+.over-ons-aanpak h2 {
+	text-align: center;
+	margin-bottom: 2rem;
+	color: #000000;
+	font-family: "Cal Sans", sans-serif;
+	font-weight: normal;
+	font-size: 2rem;
+}
+
+.over-ons-aanpak p {
+	text-align: center;
+	color: #000000;
+	font-size: 1.25rem;
+	line-height: 1.8;
+	font-family: "Poppins", sans-serif;
+}
+
+.over-ons-karakter {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 500px;
+	margin-top: 4rem;
+	position: relative;
+	z-index: 1;
+	order: 2;
+}
+
+.karakter-afbeelding {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.over-ons-aanpak,
+.over-ons-doelgroep,
+.over-ons-belofte {
+	margin-bottom: 6rem;
+}
+
+.over-ons-missie h2,
+.over-ons-doelgroep h2,
+.over-ons-belofte h2 {
+	font-family: "Cal Sans", sans-serif;
+	font-size: 2rem;
+	color: #000;
+	margin-bottom: 1.5rem;
+	font-weight: 400;
+}
+
+.over-ons-banner-container {
+	background: #48a6bb;
+	width: 200vw;
+	overflow: hidden;
+	margin: -40px 0 0 0;
+	transform: rotate(3deg);
+	transform-origin: center;
+	position: relative;
+	left: -50vw;
+	z-index: 3;
+}
+
+.over-ons-banner {
+	color: #fff;
+	padding: 12px 0;
+	font-weight: normal;
+	text-align: center;
+	font-size: 2.8rem;
+	letter-spacing: 0.5px;
+	font-family: "Cal Sans", sans-serif;
+	white-space: nowrap;
+	display: inline-block;
+	width: max-content;
+}
+
+/* Commented out doelgroep styles
+.over-ons-doelgroep {
+	margin-top: 6rem;
+	padding: 2rem 0;
+}
+
+.over-ons-doelgroep h2 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.doelgroep-intro {
+	text-align: center;
+	font-size: 1.2rem;
+	color: #666;
+	margin-bottom: 3rem;
+}
+
+.doelgroep-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	padding: 1rem;
+}
+
+.doelgroep-card {
+	background: white;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
+}
+
+.card-content {
+	padding: 2rem;
+}
+
+.doelgroep-card h3 {
+	font-family: "Cal Sans", sans-serif;
+	font-size: 1.4rem;
+	color: #47bda0;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+
+.doelgroep-card p {
+	color: #666;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin: 0;
+}
+*/
+
+@media (max-width: 768px) {
+	.over-ons {
+		padding: 100px 1.5rem 1.5rem;
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.over-ons h1 {
+		font-size: 2.5rem;
+		text-align: center;
+		width: auto;
+		display: inline-block;
+		padding: 0em 0.2em;
+		margin: 2em auto 2rem auto;
+	}
+
+	.over-ons-missie-container {
+		flex-direction: column;
+		gap: 2rem;
+		align-items: center;
+		text-align: center;
+	}
+
+	.over-ons-karakter {
+		margin-top: 2rem;
+		max-width: 200px;
+		order: 2;
+	}
+
+	.over-ons-missie {
+		width: 100%;
+		order: 1;
+	}
+
+	.over-ons-missie h2,
+	.over-ons-aanpak h2,
+	.over-ons-doelgroep h2,
+	.over-ons-belofte h2 {
+		font-size: 1.8rem;
+		text-align: center;
+	}
+
+	.over-ons-banner-container {
+		margin: -30px 0 0 0;
+		width: 200vw;
+		left: -50vw;
+	}
+
+	.over-ons-banner {
+		font-size: 1.8rem;
+		padding: 0.8rem 0;
+		width: max-content;
+	}
+
+	.over-ons-aanpak {
+		margin-top: 3rem;
+		padding: 2rem 0;
+	}
+
+	.aanpak-content {
+		width: 100%;
+		margin-top: 3rem;
+	}
+
+	.over-ons p {
+		text-align: center;
+		font-size: 1.1rem;
+	}
+
+	.karakter-afbeelding {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.over-ons {
+		padding: 80px 1rem 1rem;
+		width: 100%;
+		margin: 0;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.over-ons h1 {
+		font-size: 2rem;
+		margin: 3em auto 1.5rem auto;
+		padding: 0em 0.15em;
+		display: inline-block;
+		width: auto;
+		text-align: center;
+	}
+
+	.over-ons-missie h2,
+	.over-ons-aanpak h2,
+	.over-ons-doelgroep h2,
+	.over-ons-belofte h2 {
+		font-size: 1.5rem;
+	}
+
+	.over-ons p {
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+
+	.over-ons-banner-container {
+		margin: -20px 0 0 0;
+		width: 200vw;
+		left: -50vw;
+	}
+
+	.over-ons-banner {
+		font-size: 1.4rem;
+		padding: 0.6rem 0;
+		width: max-content;
+	}
+
+	.over-ons-karakter {
+		max-width: 160px;
+	}
+
+	.over-ons-aanpak {
+		margin-top: 2rem;
+	}
+
+	.aanpak-content {
+		margin-top: 2rem;
+	}
+}
