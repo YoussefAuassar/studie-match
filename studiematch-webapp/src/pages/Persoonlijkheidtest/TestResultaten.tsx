@@ -83,11 +83,26 @@ const TestResultaten = () => {
 					selectedJaar,
 					topTypes
 				);
-				setStudierichtingen(studierichtingenData);
+				// Filter the personality types for each studierichting to only show matching top types
+				const filteredStudierichtingen = studierichtingenData.map(
+					(studierichting) => ({
+						...studierichting,
+						persoonlijkheidstype: studierichting.persoonlijkheidstype.filter(
+							(type) => topTypes.includes(type)
+						)
+					})
+				);
+				setStudierichtingen(filteredStudierichtingen);
 
-				// Fetch beroepen based on personality types
 				const beroepenData = await fetchBeroepen(topTypes);
-				setBeroepen(beroepenData);
+
+				const filteredBeroepen = beroepenData.map((beroep) => ({
+					...beroep,
+					persoonlijkheidstype: beroep.persoonlijkheidstype.filter((type) =>
+						topTypes.includes(type)
+					)
+				}));
+				setBeroepen(filteredBeroepen);
 			} catch (error) {
 				console.error("Error loading data:", error);
 			} finally {

@@ -57,7 +57,8 @@
 .ptest-results-image-realistisch {
 	width: 700px;
 	height: 440px;
-	top: 52%;
+	top: 55%;
+	left: 45%;
 }
 
 .ptest-results-card:hover .ptest-results-image {

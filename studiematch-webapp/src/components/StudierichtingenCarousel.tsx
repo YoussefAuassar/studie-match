@@ -12,6 +12,7 @@ interface StudierichtingenCarouselProps {
 	leftPadding?: string;
 	title?: ReactNode;
 	showPersonalityIndicators?: boolean;
+	showGrade?: boolean;
 }
 
 const typeColors: { [key: string]: string } = {
@@ -27,7 +28,8 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	studierichtingen,
 	leftPadding = "9rem",
 	title,
-	showPersonalityIndicators = false
+	showPersonalityIndicators = false,
+	showGrade = false
 }) => {
 	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -94,6 +96,18 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 									<h3 className="studierichtingen-carousel-slide-title">
 										{studierichting.naam_richting}
 									</h3>
+									<div className="studierichtingen-carousel-slide-info">
+										{showGrade && (
+											<>
+												<span className="studierichtingen-carousel-slide-grade">
+													{studierichting.graad}e Graad
+												</span>
+												<span className="studierichtingen-carousel-slide-years">
+													{studierichting.jaren.join("e & ")}e jaar
+												</span>
+											</>
+										)}
+									</div>
 									{showPersonalityIndicators && (
 										<div className="studierichtingen-carousel-personality-types">
 											{studierichting.persoonlijkheidstype.map((type) => (

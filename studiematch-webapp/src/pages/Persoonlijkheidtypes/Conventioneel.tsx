@@ -161,6 +161,7 @@ const Conventioneel = () => {
 				<div style={{ marginTop: "2rem" }}>
 					<StudierichtingenCarousel
 						studierichtingen={studierichtingen}
+						showGrade={true}
 						title={
 							<div className="conventioneel-section-title">
 								<span style={{ color: "#009298" }}>Studierichtingen</span> voor

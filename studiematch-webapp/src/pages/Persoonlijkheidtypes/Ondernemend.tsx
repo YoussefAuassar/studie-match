@@ -161,6 +161,7 @@ const Ondernemend = () => {
 				<div style={{ marginTop: "2rem" }}>
 					<StudierichtingenCarousel
 						studierichtingen={studierichtingen}
+						showGrade={true}
 						title={
 							<div className="ondernemend-section-title">
 								<span style={{ color: "#FF6366" }}>Studierichtingen</span> voor
@@ -197,4 +198,3 @@ const Ondernemend = () => {
 };
 
 export default Ondernemend;
-

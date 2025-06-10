@@ -162,6 +162,7 @@ const Onderzoeker = () => {
 				<div style={{ marginTop: "2rem" }}>
 					<StudierichtingenCarousel
 						studierichtingen={studierichtingen}
+						showGrade={true}
 						title={
 							<div className="onderzoeker-section-title">
 								<span style={{ color: "#5C4E9B" }}>Studierichtingen</span> voor

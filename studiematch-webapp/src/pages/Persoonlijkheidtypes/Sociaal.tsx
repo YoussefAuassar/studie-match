@@ -159,6 +159,7 @@ const Sociaal = () => {
 				<div style={{ marginTop: "2rem" }}>
 					<StudierichtingenCarousel
 						studierichtingen={studierichtingen}
+						showGrade={true}
 						title={
 							<div className="sociaal-section-title">
 								<span style={{ color: "#87CA83" }}>Studierichtingen</span> voor
@@ -194,4 +195,3 @@ const Sociaal = () => {
 };
 
 export default Sociaal;
-
