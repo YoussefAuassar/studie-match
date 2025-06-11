@@ -11,6 +11,7 @@ import conventioneel from "../../assets/conventioneel-type.png";
 import Navigatie from "../../components/Navigatie";
 import StudierichtingenCarousel from "../../components/StudierichtingenCarousel";
 import BeroepenCarousel from "../../components/BeroepenCarousel";
+import TestResultsPDF from "../../components/TestResultsPDF";
 import Footer from "../../components/Footer";
 import {
 	type Studierichting,
@@ -193,6 +194,7 @@ const TestResultaten = () => {
 									</h1>
 								}
 								showPersonalityIndicators={true}
+								selectedYear={selectedJaar}
 							/>
 						</div>
 					)}
@@ -209,6 +211,15 @@ const TestResultaten = () => {
 							/>
 						</div>
 					)}
+					<div className="download-section">
+						<TestResultsPDF
+							results={results}
+							studierichtingen={studierichtingen}
+							beroepen={beroepen}
+							graad={selectedGraad}
+							jaar={selectedJaar}
+						/>
+					</div>
 				</>
 			)}
 			<div className="ptest-results-footer">

@@ -55,15 +55,23 @@ export async function fetchStudierichtingen(
 		}
 
 		// Filter by personality types if provided
+		let filteredData = data;
 		if (persoonlijkheidstypes && persoonlijkheidstypes.length > 0) {
-			return data.filter((richting) =>
+			filteredData = data.filter((richting) =>
 				richting.persoonlijkheidstype.some((type) =>
 					persoonlijkheidstypes.includes(type)
 				)
 			);
 		}
 
-		return data;
+		// If year is specified, ensure we only return study directions that have that exact year
+		if (jaar !== undefined) {
+			filteredData = filteredData.filter((richting) =>
+				richting.jaren.includes(jaar)
+			);
+		}
+
+		return filteredData;
 	} catch (error) {
 		console.error("Error in fetchStudierichtingen:", error);
 		return [];

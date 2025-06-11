@@ -13,6 +13,7 @@ interface StudierichtingenCarouselProps {
 	title?: ReactNode;
 	showPersonalityIndicators?: boolean;
 	showGrade?: boolean;
+	selectedYear?: number;
 }
 
 const typeColors: { [key: string]: string } = {
@@ -29,7 +30,8 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	leftPadding = "9rem",
 	title,
 	showPersonalityIndicators = false,
-	showGrade = false
+	showGrade = false,
+	selectedYear
 }) => {
 	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -54,7 +56,11 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 	};
 
 	const handleStudierichtingClick = (studierichtingId: number) => {
-		navigate(`/studierichting/${studierichtingId}`);
+		const studierichting = studierichtingen.find(
+			(s) => s.id === studierichtingId
+		);
+		const year = selectedYear || (studierichting ? studierichting.jaren[0] : 1);
+		navigate(`/studierichting/${studierichtingId}?jaar=${year}`);
 	};
 
 	const cssVariables = useMemo(() => {
@@ -103,7 +109,9 @@ const StudierichtingenCarousel: React.FC<StudierichtingenCarouselProps> = ({
 													{studierichting.graad}e Graad
 												</span>
 												<span className="studierichtingen-carousel-slide-years">
-													{studierichting.jaren.join("e & ")}e jaar
+													{selectedYear
+														? `${selectedYear}e jaar`
+														: `${studierichting.jaren.join("e & ")}e jaar`}
 												</span>
 											</>
 										)}
