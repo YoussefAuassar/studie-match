@@ -37,6 +37,13 @@ const Navigatie: React.FC = () => {
 				<ul className="navigatie-menu-items">
 					<li
 						className="navigatie-menu-item"
+						onClick={() => handleNavigation("/")}
+					>
+						<h3>Homepagina</h3>
+						<p>Terug naar de startpagina</p>
+					</li>
+					<li
+						className="navigatie-menu-item"
 						onClick={() => handleNavigation("/persoonlijkheidstestintro")}
 					>
 						<h3>Start Test</h3>

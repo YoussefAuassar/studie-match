@@ -173,3 +173,132 @@
 	width: 100%;
 	line-height: 1.2;
 }
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+	.persoonlijkheidstest-question-text {
+		font-size: 2.2rem;
+	}
+
+	.persoonlijkheidstest-question-counter {
+		font-size: 1.5rem;
+		top: 7rem;
+	}
+
+	.persoonlijkheidstest-buttons-container {
+		flex-direction: column;
+		gap: 1rem;
+		align-items: center;
+		width: 100%;
+	}
+
+	.persoonlijkheidstest-answer-button {
+		padding: 0.8rem 4rem;
+		margin: 0 auto;
+		width: 80%;
+		max-width: 300px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.persoonlijkheidstest-yes-button,
+	.persoonlijkheidstest-no-button {
+		font-size: 1.5rem;
+	}
+
+	.persoonlijkheidstest-progress-bar-container {
+		width: 150px;
+	}
+
+	.persoonlijkheidstest-back-button {
+		bottom: 1.5rem;
+		left: 1.5rem;
+	}
+
+	.persoonlijkheidstest-back-button img {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.persoonlijkheidstest-container {
+		padding: 10px;
+	}
+
+	.persoonlijkheidstest-question-text {
+		font-size: 1.8rem;
+	}
+
+	.persoonlijkheidstest-question-counter {
+		font-size: 1.2rem;
+		top: 6rem;
+	}
+
+	.persoonlijkheidstest-answer-button {
+		padding: 0.7rem 3rem;
+		width: 90%;
+		max-width: 250px;
+	}
+
+	.persoonlijkheidstest-yes-button,
+	.persoonlijkheidstest-no-button {
+		font-size: 1.2rem;
+	}
+
+	.persoonlijkheidstest-progress-bar-container {
+		width: 120px;
+	}
+
+	.persoonlijkheidstest-back-button {
+		bottom: 1rem;
+		left: 1rem;
+		padding: 0.8rem;
+	}
+
+	.persoonlijkheidstest-back-button img {
+		width: 1.2rem;
+		height: 1.2rem;
+	}
+}
+
+/* Fix for very small screens */
+@media screen and (max-width: 320px) {
+	.persoonlijkheidstest-question-text {
+		font-size: 1.5rem;
+	}
+
+	.persoonlijkheidstest-question-counter {
+		font-size: 1rem;
+		top: 5.5rem;
+	}
+
+	.persoonlijkheidstest-answer-button {
+		padding: 0.6rem 2rem;
+	}
+
+	.persoonlijkheidstest-yes-button,
+	.persoonlijkheidstest-no-button {
+		font-size: 1rem;
+	}
+
+	.persoonlijkheidstest-progress-bar-container {
+		width: 100px;
+	}
+}
+
+/* Height-based media queries for better vertical spacing */
+@media screen and (max-height: 600px) {
+	.persoonlijkheidstest-question-counter {
+		top: 5rem;
+	}
+
+	.persoonlijkheidstest-question-container {
+		padding: 1rem;
+	}
+
+	.persoonlijkheidstest-buttons-container {
+		gap: 0.5rem;
+	}
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo-studiematch-normal.svg";
 import "./../Style/Home/Footer.css";
 import arrow from "../assets/arrow-footer.svg";
@@ -11,21 +12,21 @@ const Footer: React.FC = () => {
 					<img src={logo} alt="StudieMatch Logo" className="footer-logo" />
 				</div>
 				<div className="footer-links">
-					<a href="" className="footer-link">
+					<Link to="/" className="footer-link">
+						Homepagina
+					</Link>
+					<Link to="/persoonlijkheidstestintro" className="footer-link">
 						Start Test
-					</a>
-					<a href="" className="footer-link">
-						Opleidingen
-					</a>
-					<a href="" className="footer-link">
-						Persoonlijkheidtypes
-					</a>
-					<a href="" className="footer-link">
+					</Link>
+					<Link to="/filter-studierichtingen" className="footer-link">
+						Studierichtingen
+					</Link>
+					<Link to="/persoonlijkheidstypes" className="footer-link">
+						Persoonlijkheidstypes
+					</Link>
+					<Link to="/over-ons" className="footer-link">
 						Over Studie Match
-					</a>
-					<a href="" className="footer-link">
-						Stubbie
-					</a>
+					</Link>
 				</div>
 			</div>
 			<div className="footer-bottom-container">

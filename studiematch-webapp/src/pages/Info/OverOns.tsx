@@ -3,6 +3,7 @@ import Navigatie from "../../components/Navigatie";
 import Footer from "../../components/Footer";
 import { motion } from "framer-motion";
 import conventioneel from "../../assets/conventioneel-type.png";
+import denken from "../../assets/denken.png";
 
 const OverOns = () => {
 	return (
@@ -18,6 +19,7 @@ const OverOns = () => {
 				</motion.h1>
 
 				<div className="over-ons-missie-container">
+					{" "}
 					<motion.div
 						className="over-ons-karakter"
 						initial={{ opacity: 0, x: -50 }}
@@ -94,50 +96,56 @@ const OverOns = () => {
 					</div>
 				</motion.div>
 
-				{/* <div className="over-ons-doelgroep">
-					<h2>Voor wie is StudieMatch?</h2>
-					<p className="doelgroep-intro">
-						StudieMatch is er voor leerlingen in het secundair onderwijs die:
-					</p>
-					<div className="doelgroep-cards">
-						<div className="doelgroep-card">
-							<div className="card-content">
-								<h3>Oriëntatie zoeken</h3>
-								<p>
-									Je zit in het derde jaar en weet nog niet goed wat je later
-									wilt doen
-								</p>
-							</div>
-						</div>
-						<div className="doelgroep-card">
-							<div className="card-content">
-								<h3>Heroriëntatie overwegen</h3>
-								<p>
-									Je overweegt om van studierichting te veranderen, maar weet
-									niet welke beter bij je past
-								</p>
-							</div>
-						</div>
-						<div className="doelgroep-card">
-							<div className="card-content">
-								<h3>Zelfkennis opdoen</h3>
-								<p>
-									Je wil weten welk persoonlijkheidstype jij bent, en wat
-									daarbij past
-								</p>
-							</div>
-						</div>
-						<div className="doelgroep-card">
-							<div className="card-content">
-								<h3>Toekomstgericht denken</h3>
-								<p>
-									Je zoekt een richting die écht bij je past, zodat je later
-									iets doet wat je graag doet
-								</p>
-							</div>
-						</div>
-					</div>
-				</div> */}
+				<div className="na-de-test-container">
+					<motion.div
+						className="na-de-test"
+						initial={{ opacity: 0, x: -50 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.8 }}
+					>
+						<h2>Wat na de test?</h2>
+						<p>
+							Je krijgt na de test meteen een duidelijk overzicht van welke
+							studierichtingen bij jou passen. Je kan je resultaten ook
+							downloaden als PDF. Zo kan je ze makkelijk meenemen of delen met
+							je studiebegeleider, leerkracht of iemand van het CLB.
+						</p>
+						<p>
+							Samen naar je resultaten kijken helpt om nog meer inzicht te
+							krijgen in wat écht bij jou past. Zij kunnen je extra uitleg geven
+							of hun mening delen, zodat je sterker staat in je studiekeuze.
+						</p>
+					</motion.div>
+					<motion.div
+						className="over-ons-karakter"
+						initial={{ opacity: 0, x: 50 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.8 }}
+					>
+						<img src={denken} alt="Denken" className="karakter-afbeelding" />
+					</motion.div>
+				</div>
+			</div>
+			{/* Bottom Banner */}
+			<div className="over-ons-banner-container over-ons-banner-container-bottom">
+				<motion.div
+					className="over-ons-banner"
+					animate={{
+						x: [0, -1000]
+					}}
+					transition={{
+						duration: 20,
+						repeat: Infinity,
+						ease: "linear",
+						repeatType: "loop"
+					}}
+				>
+					Ontdek je persoonlijkheidstype • Vind jouw studierichting • Doe de
+					test nu • Ontdek je persoonlijkheidstype • Vind jouw studierichting •
+					Doe de test nu
+				</motion.div>
 			</div>
 			<Footer />
 		</div>

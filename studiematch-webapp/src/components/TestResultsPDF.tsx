@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { jsPDF } from "jspdf";
-import { type Studierichting } from "../services/supabaseService";
+import { type Studierichting, type Beroep } from "../services/supabaseService";
 import logoImage from "../assets/logo-image.png";
 
 interface PersonalityType {
@@ -12,6 +12,7 @@ interface PersonalityType {
 interface TestResultsPDFProps {
 	results: PersonalityType[];
 	studierichtingen: Studierichting[];
+	beroepen: Beroep[];
 	graad?: number;
 	jaar?: number;
 }
@@ -63,6 +64,7 @@ const PDF_CONFIG = {
 const TestResultsPDF: React.FC<TestResultsPDFProps> = ({
 	results,
 	studierichtingen,
+	beroepen,
 	graad,
 	jaar
 }) => {

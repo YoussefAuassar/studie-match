@@ -76,6 +76,7 @@ body {
 	cursor: pointer;
 	padding: 2rem;
 	transform-style: preserve-3d;
+	margin-top: 3rem;
 }
 
 .onderzoeker-image-content img {
