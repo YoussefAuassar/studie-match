@@ -108,7 +108,7 @@
 
 .beroepen-carousel-prev-button {
 	left: 50px;
-	display: none; /* Hidden by default, will be shown via JS when needed */
+	display: none;
 }
 
 .beroepen-carousel-next-button:hover,

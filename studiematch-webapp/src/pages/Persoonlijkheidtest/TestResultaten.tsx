@@ -215,7 +215,6 @@ const TestResultaten = () => {
 						<TestResultsPDF
 							results={results}
 							studierichtingen={studierichtingen}
-							beroepen={beroepen}
 							graad={selectedGraad}
 							jaar={selectedJaar}
 						/>

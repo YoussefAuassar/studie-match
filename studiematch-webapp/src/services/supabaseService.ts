@@ -1,4 +1,4 @@
-import { createClient, PostgrestError } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = "https://rnbacoepwqlkysgiqwuo.supabase.co";
 const supabaseKey =
@@ -54,17 +54,15 @@ export async function fetchStudierichtingen(
 			return [];
 		}
 
-		// Filter by personality types if provided
 		let filteredData = data;
 		if (persoonlijkheidstypes && persoonlijkheidstypes.length > 0) {
 			filteredData = data.filter((richting) =>
-				richting.persoonlijkheidstype.some((type) =>
+				richting.persoonlijkheidstype.some((type: string) =>
 					persoonlijkheidstypes.includes(type)
 				)
 			);
 		}
 
-		// If year is specified, ensure we only return study directions that have that exact year
 		if (jaar !== undefined) {
 			filteredData = filteredData.filter((richting) =>
 				richting.jaren.includes(jaar)
@@ -93,10 +91,9 @@ export async function fetchBeroepen(
 			return [];
 		}
 
-		// Filter by personality types if provided
 		if (persoonlijkheidstypes && persoonlijkheidstypes.length > 0) {
 			return data.filter((beroep) =>
-				beroep.persoonlijkheidstype.some((type) =>
+				beroep.persoonlijkheidstype.some((type: string) =>
 					persoonlijkheidstypes.includes(type)
 				)
 			);

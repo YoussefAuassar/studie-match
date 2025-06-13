@@ -1,41 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { jsPDF } from "jspdf";
-import { type Studierichting, type Beroep } from "../services/supabaseService";
+import { type Studierichting } from "../services/supabaseService";
 import logoImage from "../assets/logo-image.png";
 
 interface PersonalityType {
 	name: string;
 	percentage: number;
-	className: string;
 }
 
 interface TestResultsPDFProps {
 	results: PersonalityType[];
 	studierichtingen: Studierichting[];
-	beroepen: Beroep[];
 	graad?: number;
 	jaar?: number;
 }
 
 type ColorTuple = [number, number, number];
 
-const COLORS: Record<string, ColorTuple> = {
-	primary: [72, 166, 187],
-	white: [255, 255, 255],
-	black: [0, 0, 0],
-	gray: [100, 100, 100],
-	lightGray: [128, 128, 128],
-	background: [244, 245, 249]
-};
-
-const PERSONALITY_COLORS: Record<string, ColorTuple> = {
-	Artistiek: [168, 131, 202],
-	Sociaal: [135, 202, 131],
-	Ondernemend: [255, 99, 102],
-	Onderzoeker: [92, 78, 155],
-	Conventioneel: [0, 146, 152],
-	Realistisch: [72, 166, 187]
-};
+const COLORS = {
+	primary: [72, 166, 187] as ColorTuple,
+	white: [255, 255, 255] as ColorTuple,
+	black: [0, 0, 0] as ColorTuple,
+	gray: [100, 100, 100] as ColorTuple,
+	background: [244, 245, 249] as ColorTuple,
+	personality: {
+		Artistiek: [168, 131, 202] as ColorTuple,
+		Sociaal: [135, 202, 131] as ColorTuple,
+		Ondernemend: [255, 99, 102] as ColorTuple,
+		Onderzoeker: [92, 78, 155] as ColorTuple,
+		Conventioneel: [0, 146, 152] as ColorTuple,
+		Realistisch: [72, 166, 187] as ColorTuple
+	}
+} as const;
 
 const PDF_CONFIG = {
 	headerHeight: 50,
@@ -64,45 +60,10 @@ const PDF_CONFIG = {
 const TestResultsPDF: React.FC<TestResultsPDFProps> = ({
 	results,
 	studierichtingen,
-	beroepen,
 	graad,
 	jaar
 }) => {
 	const [error, setError] = useState<string | null>(null);
-	const [logoDataUrl, setLogoDataUrl] = useState<string | null>(null);
-
-	const prepareLogo = async () => {
-		try {
-			const img = new Image();
-			img.src = logoImage;
-
-			await new Promise<void>((resolve) => {
-				img.onload = () => {
-					const canvas = document.createElement("canvas");
-					const scale = 2;
-					canvas.width = img.width * scale;
-					canvas.height = img.height * scale;
-
-					const ctx = canvas.getContext("2d");
-					if (!ctx) return;
-
-					ctx.scale(scale, scale);
-					ctx.fillStyle = "white";
-					ctx.fillRect(0, 0, canvas.width, canvas.height);
-					ctx.drawImage(img, 0, 0);
-
-					setLogoDataUrl(canvas.toDataURL("image/png"));
-					resolve();
-				};
-			});
-		} catch {
-			setError("Error preparing logo for PDF");
-		}
-	};
-
-	useEffect(() => {
-		prepareLogo();
-	}, []);
 
 	const createFirstPage = (doc: jsPDF) => {
 		const pageWidth = doc.internal.pageSize.getWidth();
@@ -145,7 +106,8 @@ const TestResultsPDF: React.FC<TestResultsPDFProps> = ({
 
 		topThreeTypes.forEach((type, index) => {
 			const boxX = PDF_CONFIG.margin.side + boxWidth * index;
-			const typeColor = PERSONALITY_COLORS[type.name] || COLORS.black;
+			const typeColor =
+				COLORS.personality[type.name as keyof typeof COLORS.personality];
 
 			doc.setFillColor(...typeColor);
 			doc.rect(boxX, contentY, boxWidth - 5, 40, "F");
@@ -215,7 +177,8 @@ const TestResultsPDF: React.FC<TestResultsPDFProps> = ({
 			if (richting.persoonlijkheidstype?.length) {
 				let typeX = x + PDF_CONFIG.typeBox.padding;
 				richting.persoonlijkheidstype.forEach((type) => {
-					const typeColor = PERSONALITY_COLORS[type] || COLORS.black;
+					const typeColor =
+						COLORS.personality[type as keyof typeof COLORS.personality];
 					doc.setFillColor(...typeColor);
 					doc.rect(
 						typeX,
@@ -231,9 +194,7 @@ const TestResultsPDF: React.FC<TestResultsPDFProps> = ({
 						type,
 						typeX + PDF_CONFIG.typeBox.width / 2,
 						y + PDF_CONFIG.typeBox.padding + 5.5,
-						{
-							align: "center"
-						}
+						{ align: "center" }
 					);
 
 					typeX += PDF_CONFIG.typeBox.width + PDF_CONFIG.typeBox.spacing;
@@ -314,8 +275,6 @@ const TestResultsPDF: React.FC<TestResultsPDFProps> = ({
 
 	const generatePDF = () => {
 		try {
-			if (!logoDataUrl) throw new Error("Logo not ready yet");
-
 			const doc = new jsPDF();
 			const pageWidth = doc.internal.pageSize.getWidth();
 
@@ -330,7 +289,7 @@ const TestResultsPDF: React.FC<TestResultsPDFProps> = ({
 			renderStudyDirections(doc, pageWidth, contentY, studierichtingen);
 
 			doc.setFontSize(PDF_CONFIG.fontSize.small);
-			doc.setTextColor(...COLORS.lightGray);
+			doc.setTextColor(...COLORS.gray);
 			doc.text(
 				`Gegenereerd op ${new Date().toLocaleDateString()}`,
 				pageWidth - PDF_CONFIG.margin.side,

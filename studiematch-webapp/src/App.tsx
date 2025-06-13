@@ -12,8 +12,6 @@ import TestResultaten from "./pages/Persoonlijkheidtest/TestResultaten";
 import PersoonlijkheidstestIntro from "./pages/Persoonlijkheidtest/PersoonlijkheidstestIntro";
 import TweedeGraad from "./pages/Persoonlijkheidtest/TweedeGraad";
 import DerdeGraad from "./pages/Persoonlijkheidtest/DerdeGraad";
-// import StudierichtingenVoorbeeld from "./pages/StudierichtingenVoorbeeld";
-// import BeroepenVoorbeeld from "./pages/BeroepenVoorbeeld";
 import BeroepDetail from "./pages/Detail/BeroepDetail";
 import StudierichtingDetail from "./pages/Detail/StudierichtingDetail";
 import FilterStudierichtingen from "./pages/Info/FilterStudierichtingen";
@@ -45,11 +43,7 @@ function App() {
 				/>
 				<Route path="/tweede-graad" element={<TweedeGraad />} />
 				<Route path="/derde-graad" element={<DerdeGraad />} />
-				{/* <Route
-					path="/studierichtingen"
-					element={<StudierichtingenVoorbeeld />}
-				/>
-				<Route path="/beroepen" element={<BeroepenVoorbeeld />} /> */}
+
 				<Route path="/beroep/:id" element={<BeroepDetail />} />
 				<Route path="/studierichting/:id" element={<StudierichtingDetail />} />
 				<Route

@@ -94,7 +94,7 @@ const FilterStudierichtingen: React.FC = () => {
 			}
 		};
 
-		handleResize(); // Initial check
+		handleResize();
 		window.addEventListener("resize", handleResize);
 
 		return () => {
@@ -192,7 +192,6 @@ const FilterStudierichtingen: React.FC = () => {
 			return true;
 		})
 		.flatMap((studierichting) => {
-			// If there's a year filter, only create entries for the filtered years
 			if (filters.jaar.length > 0) {
 				return filters.jaar
 					.filter((jaar) => studierichting.jaren.includes(jaar))
@@ -201,7 +200,7 @@ const FilterStudierichtingen: React.FC = () => {
 						currentJaar: jaar
 					}));
 			}
-			// Otherwise, create an entry for each year the studierichting is available in
+
 			return studierichting.jaren.map((jaar) => ({
 				...studierichting,
 				currentJaar: jaar
