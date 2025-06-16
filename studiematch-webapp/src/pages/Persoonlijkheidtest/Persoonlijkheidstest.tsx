@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../../style/Persoonlijkheidtest/persoonlijkheidstest.css";
+import "../../style/Persoonlijkheidtest/Persoonlijkheidstest.css";
 import { persoonlijkheidstestVragen } from "../../constants/persoonlijkheidstestVragen";
 import { motion, AnimatePresence } from "framer-motion";
 import arrowLeft from "../../assets/arrow-left.svg";
