@@ -7,7 +7,7 @@ import studentOpTrap from "../../assets/studenten-op-trap.png";
 import johnHolland from "../../assets/john-holland.jpg";
 import kinderenLopen from "../../assets/kinderen-lopen.png";
 import kinderenTafel from "../../assets/kinderen-tafel.png";
-import PrintingKids from "../../assets/Printing-kinderen.png";
+import PrintingKids from "../../assets/printing-kinderen.png";
 import arrowDown from "../../assets/arrow-down.svg";
 import { useNavigate } from "react-router-dom";
 
