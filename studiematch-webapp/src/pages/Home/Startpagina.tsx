@@ -1,4 +1,4 @@
-import "../../Style/Home/Startpagina.css";
+import "../../style/Home/Startpagina.css";
 import Navigatie from "../../components/Navigatie";
 import { motion } from "framer-motion";
 import Footer from "../../components/Footer";
