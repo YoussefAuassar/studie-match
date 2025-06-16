@@ -1,4 +1,4 @@
-import "../../Style/Info/Overons.css";
+import "../../style/Info/Overons.css";
 import Navigatie from "../../components/Navigatie";
 import Footer from "../../components/Footer";
 import { motion } from "framer-motion";
